@@ -5,7 +5,7 @@
 			<li><a href="">Link</a></li>
 			<li><a href="/web/pages/login.php">Login</a></li>
 		</ul>
-		<form action="../../index.php" class="navbar-form navbar-left">
+		<form action="../../index.php" class="navbar-form navbar-right">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Recherche">
 			</div>
