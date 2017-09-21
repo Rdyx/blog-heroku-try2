@@ -27,7 +27,7 @@
 $content .= '<div class="row">
     <h1>Post an article</h1>
       </div>
-        <form action="test.php" method="post">
+        <form action="web/pages/test.php" method="post">
           <label for="titre">Titre</label>
           <input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50">
           <label for="contenu">Votre texte</label>
