@@ -1,9 +1,9 @@
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
-			<li><a href="../../index.php">Link</a></li>
+		<li><a href="../../index.php">Accueil</a></li>
 			<li><a href="">Link</a></li>
-			<li><a href="">Link</a></li>
+			<li><a href="../pages/login.php">Login</a></li>
 		</ul>
 		<form action="../../index.php" class="navbar-form navbar-left">
 			<div class="form-group">
