@@ -16,7 +16,7 @@
 	if($nick == $row[0] && $pwd == $row[1]){
 		$content = "GG";
 	} else {
-		$content = "nope";
+		$content = 'Mauvais identifiant(s) ! <br> <a href="login.php">Retour</a>';
 	};
 
 	include ('../layout/layout.php');
