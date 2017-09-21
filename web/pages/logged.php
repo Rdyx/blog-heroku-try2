@@ -10,9 +10,11 @@
 
 	$test = pg_query($dbconn, 'select * from admin');
   $row = pg_fetch_row($test);
-  echo "name : $row2[0]";
+  $pwd = strtoupper(hash('sha256', $_POST['pwd']));
+  echo "name : $row[0]";
+  echo $pwd;
 
-  if($_POST['pseudo'] == $row[0] && strtoupper(hash('sha256', $_POST['pwd'])) == $row[1]){
+  if($_POST['pseudo'] == $row[0] &&  $pwd == $row[1]){
   	$content = "GG";
   } else {
   	$content = "nope";
