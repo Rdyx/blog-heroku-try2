@@ -15,6 +15,8 @@
 		<input type="submit" value="Connexion">
 	</form>';
 
+	include ('../layout/layout.php');
+	
 	?>
 
 </body>
