@@ -14,7 +14,7 @@
   $result = pg_query($dbconn, 'select * from admin');
   var_dump(pg_fetch_all($result));
 
-  include ('web/bdd/linkbdd.php');
+  
 
   ?>
 </body>
