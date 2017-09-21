@@ -18,7 +18,7 @@
 
 	echo $artTitle . ' ' . $artContent;
 
-	if($artTitle == "" || $artContent == ""){
+	if($artTitle == "" || $artContent == "" || strlen($artTitle) > 50 || strlen($artContent) > 500){
 		echo "erreur";
 	} else {
 		// $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
