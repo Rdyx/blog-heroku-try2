@@ -17,7 +17,8 @@
     echo "Name : $row[0]  Pwd : $row[1]";
   }
 
-  echo pg_fetch_all($dbconn, 'select adm_pwd from admin');
+  echo pg_query($dbconn, 'select adm_name from admin');
+
   ?>
 
   <p>lzev</p>
