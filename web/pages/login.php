@@ -10,9 +10,9 @@
 
 	$content = '<form action="logged.php" method="post">
 		<label for="pseudo">Pseudo</label>
-		<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" value="ok" required>
+		<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
 		<label for="pwd">Mot de passe</label>
-		<input type="text" id="pwd" name="pwd" placeholder="Mot de passe" value="lolilol" required>
+		<input type="password" id="pwd" name="pwd" placeholder="Mot de passe" required>
 		<input type="submit" value="Connexion">
 	</form>';
 
