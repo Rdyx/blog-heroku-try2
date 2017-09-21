@@ -20,7 +20,7 @@
 
   $test = pg_query($dbconn, 'select adm_name from admin');
   $row2 = pg_fetch_row($test)
-  echo $row2[1];
+  echo $row2[0];
 
   ?>
 
