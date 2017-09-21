@@ -15,8 +15,8 @@
   $result = pg_query($dbconn, 'select * from articles');
 
   while($row = pg_fetch_row($result)){
-    $content .= '<div class="row text-center"><h1>$row[1]</h1></div>';
-    $content .= '<div class="row text-justify"><p>$row[2]<p></div>';
+    $content .= '<div class="row text-center"><h1> '.$row[1].' </h1></div>';
+    $content .= '<div class="row text-justify"><p> '.$row[2].' <p></div>';
   }
 
   include ('web/layout/layout.php');
