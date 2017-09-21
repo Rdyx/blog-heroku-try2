@@ -20,7 +20,7 @@
   $result = pg_query($dbconn, 'select * from articles');
 
   while($row = pg_fetch_row($result)){
-    $content .= "Name : $row[0]  Pwd : $row[1]";
+    $content .= "id : $row[0]  art : $row[1] content : $row[2]";
     $content .= "<br>";
   }
 
