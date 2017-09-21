@@ -15,7 +15,7 @@
 		$artTitle = htmlspecialchars($_POST['titre']);
 		$artContent = htmlspecialchars($_POST['contenu']);
 
-		if($artTitle == "" || $artContent == "" || strlen($artTitle) > 50 || strlen($artContent) > 500){
+		if($artTitle == "" || $artContent == "" || strlen($artTitle) > 50 || strlen($artContent) > 1000){
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="login.php">Retour</a></div>';
 		} else {
 			$push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";

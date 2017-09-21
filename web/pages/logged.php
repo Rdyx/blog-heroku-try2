@@ -23,13 +23,13 @@
 						<label for="titre">Titre</label>
 						</div>
 						<div class="row">
-						<input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50" required>
+						<input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50" size="50" required>
 						</div>
 						<div class="row">
 						<label for="contenu">Votre texte</label>
 						</div>
 						<div class="row">
-						<textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Votre texte..." maxlength="500" required></textarea>
+						<textarea name="contenu" id="contenu" cols="75" rows="10" placeholder="Votre texte..." maxlength="1000" required></textarea>
 						</div>
 						<div class="row">
 						<input type="submit" value="Poster" id="postArt">
