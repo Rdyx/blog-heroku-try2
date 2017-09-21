@@ -15,10 +15,11 @@
 
   while($row = pg_fetch_row($result)){
     echo "Name : $row[0]  Pwd : $row[1]";
+    echo "<br>";
   }
 
   $test = pg_query($dbconn, 'select adm_name from admin');
-  echo pg_fetch_row($test);
+  echo pg_fetch_row($test[0]);
 
   ?>
 
