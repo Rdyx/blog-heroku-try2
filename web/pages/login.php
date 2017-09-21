@@ -5,7 +5,7 @@
 	<title>Login</title>
 </head>
 <body>
-	<?php include ('../layout/navbar.php')
+	<?php include ('../layout/navbar.php');
 
 	$content = '<form action="logged.php" method="post">
 		<label for="pseudo">Pseudo</label>
