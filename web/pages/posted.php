@@ -16,11 +16,11 @@
 		$artContent = htmlspecialchars($_POST['contenu']);
 
 		if($artTitle == "" || $artContent == "" || strlen($artTitle) > 50 || strlen($artContent) > 500){
-			$content = "erreur <br> <a href='logged.php'>Retour</a>";
+			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="logged.php">Retour</a></div>';
 		} else {
 			$push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
 			pg_query($dbconn, $push);
-			$content = 'Success ! <a href="../../index.php">Retour à l\'index</a>';
+			$content = '<div class="row"><h1>Success !</h1> <br> <a href="../../index.php">Retour à l\'index</a></div>';
 		};
 
 		include ('../layout/layout.php');

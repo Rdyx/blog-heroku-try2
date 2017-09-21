@@ -18,14 +18,20 @@
 			<h1>Post an article</h1>
 				</div>
 					<form action="posted.php" method="post">
+						<div class="row ">
 						<label for="titre">Titre</label>
 						<input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50" required>
+						</div>
+						<div class="row ">
 						<label for="contenu">Votre texte</label>
 						<textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Votre texte..." maxlength="500" required></textarea>
+						</div>
+						<div class="row ">
 						<input type="submit" value="Poster" id="postArt">
+						</div>
 					</form>';
 		} else {
-			$content = 'Mauvais identifiant(s) ! <br> <a href="login.php">Retour</a>';
+			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
 		};
 
 		include ('../layout/layout.php');
