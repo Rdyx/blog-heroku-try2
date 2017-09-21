@@ -13,9 +13,9 @@
 
   $result = pg_query($dbconn, 'select * from admin');
 
-  foreach($result as $value){
-      echo $values[0];
-    }
+  while($row = pg_fetch_row($result)){
+    echo "Name : $row[0]  Pwd : $row[1]";
+  }
 
   ?>
 
