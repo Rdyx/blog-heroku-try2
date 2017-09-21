@@ -40,7 +40,7 @@ $content .= '<div class="row">
 
     echo $artTitle . ' ' . $artContent;
 
-    if(!isset($artTitle) || !isset($artContent)){
+    if(!isset($artTitle)){
       echo "erreur";
     } else {
     $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
