@@ -9,19 +9,19 @@
 	<?php include ('../layout/navbar.php');
 
 	$test = pg_query($dbconn, 'select * from admin');
-  $row = pg_fetch_row($test);
-  $pwd = strtoupper(hash('sha256', $_POST['pwd']));
-  echo "name : $row[1]";
-  echo $pwd;
+	$row = pg_fetch_row($test);
+	$pwd = strtoupper(hash('sha256', $_POST['pwd']));
+	echo "name : $row[1] <br>";
+	echo "test $pwd test ". $_POST['pwd'];
 
-  if($_POST['pseudo'] == $row[0] &&  $pwd == $row[1]){
-  	$content = "GG";
-  } else {
-  	$content = "nope";
-  };
+	if($_POST['pseudo'] == $row[0] &&  $pwd == $row[1]){
+		$content = "GG";
+	} else {
+		$content = "nope";
+	};
 
-  include ('../layout/layout.php');
-  ?>
+	include ('../layout/layout.php');
+	?>
 
 </body>
 </html>
