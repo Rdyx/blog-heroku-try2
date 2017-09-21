@@ -27,7 +27,7 @@
 $content .= '<div class="row">
     <h1>Post an article</h1>
       </div>
-        <form action="" method="post">
+        <form action="test.php" method="post">
           <label for="titre">Titre</label>
           <input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50">
           <label for="contenu">Votre texte</label>
@@ -40,12 +40,12 @@ $content .= '<div class="row">
 
     echo $artTitle . ' ' . $artContent;
 
-    if(isset($artTitle)){
+    if(!isset($artTitle) || !isset($artContent)){
       echo "erreur";
     } else {
-      echo "test";
-    // $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
-    // pg_query($dbconn, $push);
+    $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
+    pg_query($dbconn, $push);
+    echo "success";
   };
   include ('web/layout/layout.php');
   ?>
