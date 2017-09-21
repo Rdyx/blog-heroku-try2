@@ -20,13 +20,12 @@
 		} else {
 			$push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
 			pg_query($dbconn, $push);
-			$content = "Success !";
+			$content = 'Success ! <a href="../../index.php">Retour à l\'index</a>';
 		};
 
 		include ('../layout/layout.php');
 
 	?>
-
 
 </body>
 </html>
