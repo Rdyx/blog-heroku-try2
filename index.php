@@ -40,7 +40,7 @@ $content .= '<div class="row">
 
     echo $artTitle . ' ' . $artContent;
 
-    if(!isset($artTitle)){
+    if(isset($artTitle)){
       echo "erreur";
     } else {
       echo "test";
