@@ -22,7 +22,8 @@
 			pg_query($dbconn, $push);
 			$content = "Success !";
 		};
-		include ('web/layout/layout.php');
+
+		include ('../layout/layout.php');
 
 	?>
 

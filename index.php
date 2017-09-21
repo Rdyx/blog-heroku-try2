@@ -10,7 +10,7 @@
   <?php
 
   include ("web/layout/navbar.php");
-  include ('../bdd/linkbdd.php');
+  include ('web/bdd/linkbdd.php');
 
   $result = pg_query($dbconn, 'select * from articles');
 
