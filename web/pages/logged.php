@@ -19,9 +19,9 @@
 			</div>
 				<form action="" method="post">
 					<label for="titre">Titre</label>
-					<input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50">
+					<input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50" required>
 					<label for="contenu">Votre texte</label>
-					<textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Votre texte..." maxlength="500"></textarea>
+					<textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Votre texte..." maxlength="500" required></textarea>
 					<input type="submit" value="Poster" id="postArt">
 				</form>';
 
