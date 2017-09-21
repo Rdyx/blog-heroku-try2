@@ -43,8 +43,9 @@ $content .= '<div class="row">
     if(!isset($artTitle)){
       echo "erreur";
     } else {
-    $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
-    pg_query($dbconn, $push);
+      echo "test";
+    // $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
+    // pg_query($dbconn, $push);
   };
   include ('web/layout/layout.php');
   ?>
