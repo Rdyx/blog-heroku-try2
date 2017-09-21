@@ -35,18 +35,18 @@ $content .= '<div class="row">
           <input type="submit" value="Poster" id="postArt">
         </form>';
 
-    $artTitle = htmlspecialchars($_POST['titre']);
-    $artContent = htmlspecialchars($_POST['contenu']);
+  //   $artTitle = htmlspecialchars($_POST['titre']);
+  //   $artContent = htmlspecialchars($_POST['contenu']);
 
-    echo $artTitle . ' ' . $artContent;
+  //   echo $artTitle . ' ' . $artContent;
 
-    if(!isset($artTitle) || !isset($artContent)){
-      echo "erreur";
-    } else {
-    $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
-    pg_query($dbconn, $push);
-    echo "success";
-  };
+  //   if(!isset($artTitle) || !isset($artContent)){
+  //     echo "erreur";
+  //   } else {
+  //   $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
+  //   pg_query($dbconn, $push);
+  //   echo "success";
+  // };
   include ('web/layout/layout.php');
   ?>
 
