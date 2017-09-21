@@ -18,6 +18,7 @@
   	$content = "nope";
   };
 
+  include ('../layout/layout.php');
   ?>
 
 </body>
