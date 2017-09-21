@@ -18,7 +18,7 @@
 
 	echo $artTitle . ' ' . $artContent;
 
-	if(!isset($_POST['titre']) || !isset($_POST['contenu'])){
+	if($artTitle == "" || $artContent == ""){
 		echo "erreur";
 	} else {
 		// $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
