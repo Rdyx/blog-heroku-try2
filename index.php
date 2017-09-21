@@ -39,8 +39,8 @@ $content .= '<div class="row">
     $artContent = htmlspecialchars($_POST['contenu']);
 
     echo $artTitle . ' ' . $artContent;
-
-    pg_query($dbconn, 'INSERT INTO articles (art_title, art_content) VALUES ($artTitle, $artContent)');
+    $push = "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')";
+    pg_query($dbconn, $push);
 
   include ('web/layout/layout.php');
   ?>
