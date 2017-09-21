@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
 <body>
+
+  <?php
+  include ("web/layout/navbar.php");
+  ?>
+
+
   <h1>olololzerervzedvz</h1>
 
 <?php 
@@ -14,20 +21,17 @@
   $result = pg_query($dbconn, 'select * from admin');
 
   while($row = pg_fetch_row($result)){
-    echo "Name : $row[0]  Pwd : $row[1]";
-    echo "<br>";
+    $content .= "Name : $row[0]  Pwd : $row[1]";
+    $content .= "<br>";
   }
 
   $test = pg_query($dbconn, 'select adm_name from admin');
   $row2 = pg_fetch_row($test);
   echo "name : $row2[0]";
 
+  include ('web/layout/layout.php');
   ?>
 
-  <p>lzev</p>
 
-  <?php
-  include ("web/layout/layout.php");
-  ?>
 </body>
 </html>
