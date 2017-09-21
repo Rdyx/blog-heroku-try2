@@ -38,6 +38,8 @@ $content .= '<div class="row">
     $artTitle = htmlspecialchars($_POST['titre']);
     $artContent = htmlspecialchars($_POST['contenu']);
 
+    echo $artTitle . ' ' . $artContent;
+
     pg_query($dbconn, 'INSERT INTO articles (art_title, art_content) VALUES ($artTitle, $artContent)');
 
   include ('web/layout/layout.php');
