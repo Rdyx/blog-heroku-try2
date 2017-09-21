@@ -18,7 +18,7 @@
   }
 
   $test = pg_query($dbconn, 'select adm_name from admin');
-  echo pg_fetch_object($test);
+  echo pg_fetch_row($test);
 
   ?>
 
