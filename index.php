@@ -24,7 +24,7 @@
     $content .= "<br>";
   }
 
-$content = '<div class="row">
+$content .= '<div class="row">
     <h1>Post an article</h1>
       </div>
         <form action="" method="post">
