@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php include ('../layout/navbar.php');
-
+		include ('../bdd/linkbdd.php');
 	$test = pg_query($dbconn, 'select * from admin');
 	$row = pg_fetch_row($test);
 	$pwd = strtoupper(hash('sha256', $_POST['pwd']));
