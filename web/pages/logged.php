@@ -17,19 +17,25 @@
 			$content = '<div class="row">
 			<h1>Post an article</h1>
 				</div>
+				<div class="row">
 					<form action="posted.php" method="post">
 						<div class="row ">
 						<label for="titre">Titre</label>
+						</div>
+						<div class="row">
 						<input type="text" name="titre" id="titre" placeholder="Titre" maxlength="50" required>
 						</div>
-						<div class="row ">
+						<div class="row">
 						<label for="contenu">Votre texte</label>
+						</div>
+						<div class="row">
 						<textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Votre texte..." maxlength="500" required></textarea>
 						</div>
-						<div class="row ">
+						<div class="row">
 						<input type="submit" value="Poster" id="postArt">
 						</div>
-					</form>';
+					</form>
+				</div>';
 		} else {
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
 		};
