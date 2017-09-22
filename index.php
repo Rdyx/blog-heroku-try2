@@ -55,6 +55,8 @@
                     <li><a href="?genre='.$row[4].'">Thème : <strong>'.$row[4].'</strong></a></li>
                     <li> - </li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
+                    <li> - </li>
+                    <li><a href="#" alt="Back-To-The-Top !">^^^</a></li>
                   </ul>
                 </div>
                 </div>';
