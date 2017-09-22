@@ -5,9 +5,9 @@
 			<li><a href="">Link</a></li>
 			<li><a href="/web/pages/login.php">Login</a></li>
 		</ul>
-		<form action="../../index.php" class="navbar-form navbar-right">
+		<form action="../../index.php" method="post" class="navbar-form navbar-right">
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Recherche">
+				<input type="text" class="form-control" name="search" id="search" placeholder="Rechercher dans les articles...">
 			</div>
 			<button type="submit" class="btn btn-default">Rechercher</button>
 		</form>
