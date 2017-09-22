@@ -32,7 +32,7 @@
   $id = htmlspecialchars($_GET['id']);
 
   if(!empty($id)){
-    $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
+    $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ORDER BY art_oid DESC");
     $content = boucle($selectId);
     // include ('web/layout/comments.php'); 
   };
@@ -41,7 +41,7 @@
   $genre = htmlspecialchars($_GET['genre']);
 
   if(!empty($genre)){
-    $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."'");
+    $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."' ORDER BY art_oid DESC");
     $content = boucle($selectTheme);  
   };
 
