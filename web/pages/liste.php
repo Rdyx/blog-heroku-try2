@@ -12,7 +12,28 @@
   include ("../layout/navbar.php");
   include ('../bdd/linkbdd.php');
 
-  $order = 'ORDER BY art_oid DESC';
+  if($orderSelect == "Ordre croissant"){
+  	if($colSelect == "Titre"){
+  		$order = "ORDER BY art_title ASC";
+  	} if($colSelect == "Résumé"){
+  		$order = "ORDER BY art_content ASC";
+  	} if($colSelect == "Thème"){
+  		$order == "ORDER BY art_genre ASC"; 
+  	} if($colSelect == "Date de parution"){
+  		$order == "ORDER BY art_month ASC, art_year ASC";
+  	};
+  } if($orderSelect == "Ordre décroissant"){
+  	  if($colSelect == "Titre"){
+  		$order == "ORDER BY art_title DESC";
+  	  } if($colSelect == "Résumé"){
+  	  	$order == "ORDER BY art_content DESC";
+  	  } if($colSelect == "Thème"){
+  	  	$order == "ORDER BY art_genre DESC";
+  	  } if($colSelect == "Date de parution"){
+  	  	$order == "ORDER BY art_month DESC, art_year DESC";
+  	  }
+  }
+  
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
   $colSelect = htmlspecialchars($_POST['colSelect']);
@@ -40,9 +61,6 @@
     return $content;
   }
 
-  if($colSelect == 'Titre'){
-  	echo "test title test";
-  }
   $content .= 	'<div class="row">
 	  				<form action="" method="post">
 	  					<select name="colSelect" id="colSelect">
@@ -55,7 +73,7 @@
 	  						<option>Ordre croissant</option>
 	  						<option>Ordre décroissant</option>
 	  					</select>
-	  					<button type="submit">
+	  					<button type="submit" value="Trier">
 	  				</form>
 	  			</div>';
 
