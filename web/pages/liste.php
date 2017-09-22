@@ -17,6 +17,13 @@
   $content = boucle($result);
 
     function boucle($arg1){
+    	$content .= '<table class="">
+    					<tr>
+    						<th>Titre</th>
+    						<th>Résumé</th>
+    						<th>Theme</th>
+    						<th>Date de parution</th>
+    						<th>Lien direct</th>'
     while($row = pg_fetch_row($arg1)){
       $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';

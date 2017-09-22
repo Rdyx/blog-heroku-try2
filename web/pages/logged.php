@@ -35,13 +35,21 @@
 						<textarea name="contenu" id="contenu" cols="75" rows="10" placeholder="Votre texte..." maxlength="1000" required></textarea>
 						</div>
 						<div class="row">
-						<select name="genre">
-							<option>Essence</option>
-							<option>Diesel</option>
-							<option>Nucléaire</option>
-							<option>Soleil</option>
-							<option>Electrique</option>
-						</select>
+						<ul class="list-inline">
+							<li>
+								<select name="genre">
+									<option>Essence</option>
+									<option>Diesel</option>
+									<option>Nucléaire</option>
+									<option>Soleil</option>
+									<option>Electrique</option>
+								</select>
+							</li>
+							<li>Date de parution</li>
+							<li>'.boucleDate(12).'</li>
+							<li>'.boucleDate(date('Y')).'</li>
+						</div>
+						<div class="row">
 						<br><input type="submit" value="Poster" id="postArt">
 						</div>
 					</form>
@@ -49,6 +57,15 @@
 		} else {
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
 		};
+
+		function boucleDate($arg1){
+			$content .= '<select>';
+			for($i = 0; $i < $arg1; $i++){
+				$content .= '<option>'.$i.'</option>';
+			}
+			$content .= '</select>';
+		}
+
 
 		include ('../layout/layout.php');
 		?>
