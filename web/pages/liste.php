@@ -28,7 +28,7 @@
   	} else {
   	$content .= "Erreur lors du tri ! Remise en ordre par défaut !";
   	$order = "ORDER BY art_oid DESC";
-  	};
+  	}
   } if($orderSelect == "Ordre décroissant"){
   	  if($colSelect == "Titre"){
   		$order = "ORDER BY art_title DESC";
@@ -41,7 +41,7 @@
   	  } else {
   	$content .= "Erreur lors du tri ! Remise en ordre par défaut !";
   	$order = "ORDER BY art_oid DESC";
-  	};
+  	}
   } else {
   	$content .= "Erreur lors du tri ! Remise en ordre par défaut !";
   	$order = "ORDER BY art_oid DESC";
