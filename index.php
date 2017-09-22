@@ -20,7 +20,7 @@
   
 
   if(!empty($searchInput)){
-    $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%'");
+    $search = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC WHERE art_title LIKE '%".$searchInput."%'");
     $content = boucle($search);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
@@ -32,7 +32,7 @@
   $id = htmlspecialchars($_GET['id']);
 
   if(!empty($id)){
-    $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
+    $selectId = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC WHERE art_oid = '".$id."'");
     $content = boucle($selectId);
     // include ('web/layout/comments.php'); 
   };
@@ -41,7 +41,7 @@
   $genre = htmlspecialchars($_GET['genre']);
 
   if(!empty($genre)){
-    $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."'");
+    $selectTheme = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC WHERE art_genre LIKE '".$genre."'");
     $content = boucle($selectTheme);  
   };
 
