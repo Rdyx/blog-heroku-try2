@@ -64,7 +64,7 @@
 							</li>
 							<li>
 								<select name="annee" id="annee">
-								'.$content .= boucle(date('Y'), -10001, >).'
+								'.$content .= boucle(date('Y'), -10001, '--').'
 								</select>
 							</li>
 						</ul>
@@ -81,7 +81,7 @@
 		// $monthArray = array(12,11,10,09,08,07,06,05,04,03,02,01);
 
 		function boucle($arg1, $arg2, $sign){
-		    for($i = $arg1; $i $sign $arg2; $i--){
+		    for($i = $arg1; $i > $arg2; $i.$sign){
 		      $content .= '<option>'.$i.'</option>';
 		    }
 		    return $content;
