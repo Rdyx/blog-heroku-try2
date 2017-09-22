@@ -22,7 +22,7 @@
       $content .= '<div class="row text-right">
                   <ul class="list-inline">
                     <li>'.$row[4].'</li>
-                    <li><a href="web/pages/article.php?id='.$row[0].'"><h1>#'.$row[0].'</h1></a></li>
+                    <li><a href="?id='.$row[0].'"><h1>#'.$row[0].'</h1></a></li>
                   </ul>
                   </div>';
     }
@@ -31,18 +31,22 @@
     while($row = pg_fetch_row($search)){
       $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-      $content .= '<div class="row"><a href="web/pages/article.php?id='.$row[0].'"><h1>#'.$row[0].'</h1></a></div>';
+      $content .= '<div class="row text-right">
+                  <ul class="list-inline">
+                    <li>'.$row[4].'</li>
+                    <li><a href="?id='.$row[0].'">#'.$row[0].'</a></li>
+                  </ul>
+                  </div>';
     }
   }
 
-  if($id == ""){
-  } else {
-    $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid LIKE '".$id."'");
-    while($row = pg_fetch_row($selection)){;
-      $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
-      $content .= '<div class="row"><p> '.$row[3].' <p></div>';
+    if($id == ""){
+    } else {
+      $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
+      $row = pg_fetch_row($selection);
+        $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
+        $content .= '<div class="row"><p> '.$row[3].' <p></div>';
     }
-  }
 
   include ('web/layout/layout.php');
 
