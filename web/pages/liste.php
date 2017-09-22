@@ -17,7 +17,7 @@
   $content = boucle($result);
 
     function boucle($arg1){
-    	$content .= '<table class="table-striped table-bordered table-responsive">
+    	$content .= '<table class="table table-striped table-bordered table-responsive">
     					<tr>
     						<th class="text-center">Titre</th>
     						<th class="text-center">Résumé</th>
