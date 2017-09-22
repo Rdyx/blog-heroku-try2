@@ -48,6 +48,7 @@
 							<li>Date de parution</li>
 							<li>'.boucleDate(12).'</li>
 							<li>'.boucleDate(date('Y')).'</li>
+						</ul>
 						</div>
 						<div class="row">
 						<br><input type="submit" value="Poster" id="postArt">
