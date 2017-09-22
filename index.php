@@ -51,7 +51,7 @@
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-right">
                   <ul class="list-inline">
-                    <li>Date de parution de l\ouvrage : '.$row[5].'/'.$row[6].'</li>
+                    <li>Date de parution de l\'ouvrage : '.$row[5].'/'.$row[6].'</li>
                     <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
                     <li> - </li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
