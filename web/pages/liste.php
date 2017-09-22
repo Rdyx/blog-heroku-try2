@@ -80,7 +80,6 @@ $content = 	'<div class="row">
 
     $content .= '</tbody>
     			</table>
-    			<ul class="pagination"></ul>
     			</div>';
 
     return $content;
