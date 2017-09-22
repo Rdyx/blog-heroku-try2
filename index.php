@@ -12,19 +12,20 @@
   include ("web/layout/navbar.php");
   include ('web/bdd/linkbdd.php');
 
-  $searchInput = htmlspecialchars($_POST['search']);
 
   $result = pg_query($dbconn, 'select * from articles');
   $content = boucle($result);
   
-  if(!$searchInput == ""){
+  $searchInput = htmlspecialchars($_POST['search']);
+  
+  if(!empty($searchInput)){
   $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' OR art_content LIKE '%".$searchInput."%'");
   $content = boucle($search);
 }
 
 $id = htmlspecialchars($_GET['id']);
 
-if(!$id){
+if(!empty($id)){
   $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
   $content = boucle($id);  
 };
@@ -32,7 +33,7 @@ if(!$id){
 
 $genre = htmlspecialchars($_GET['genre']);
 
-if($genre == ""){
+if(!empty($genre)){
   $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."'");
   $content = boucle($genre);  
 };
