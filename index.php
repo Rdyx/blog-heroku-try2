@@ -65,7 +65,6 @@
                 </div>
                 </div>';
     }
-    $content .= '<ul class="pagination"></ul>';
     return $content;
   }
 
@@ -73,6 +72,7 @@ include ('web/layout/layout.php');
 
 ?>
 
+<div class="row"><ul class="pagination"></ul></div>
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
