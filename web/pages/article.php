@@ -9,22 +9,22 @@
 
     <?php
 
-    include ("web/layout/navbar.php");
-    include ('web/bdd/linkbdd.php');
+    include ("../layout/navbar.php");
+    include ('../bdd/linkbdd.php');
 
     $id = htmlspecialchars($_GET['id']);
     echo $id;
 
     if($id == ""){
     } else {
-      $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '%".$id."%'");
+      $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
       while($row = pg_fetch_row($selection)){
         $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
         $content .= '<div class="row"><p> '.$row[3].' <p></div>';
       }
     }
 
-    include ('web/layout/layout.php');
+    include ('../layout/layout.php');
 
     ?>
 
