@@ -49,7 +49,7 @@
     						<th class="text-center col-xs-6">Résumé</th>
     						<th class="text-center col-xs-1">Thème</th>
     						<th class="text-center col-xs-1">Date de parution</th>
-    						<th class="col-xs-1"></th>
+    						<th class="col-xs-1">En savoir plus</th>
     					</tr>
     				</div>
     				<div class="row">
