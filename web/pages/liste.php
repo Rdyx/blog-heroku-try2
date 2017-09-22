@@ -45,22 +45,21 @@
     	$content .= '<div class="row">
     				<table class="table-striped table-bordered table-responsive">
     					<tr>
-    						<th class="text-center">Titre</th>
-    						<th class="text-center">Résumé</th>
-    						<th class="text-center">Thème</th>
-    						<th class="text-center">Date de parution</th>
-    						<th></th>
+    						<th class="text-center col-xs-3">Titre</th>
+    						<th class="text-center col-xs-6">Résumé</th>
+    						<th class="text-center col-xs-1">Thème</th>
+    						<th class="text-center col-xs-1">Date de parution</th>
     					</tr>
     				</div>
     				<div class="row" id="table-articles">
     					<table class="table-striped table-bordered table-responsive list">';
 
     while($row = pg_fetch_row($arg1)){
-      $content .= '<tr class="article"><td>'.$row[1].'</td>';
-      $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
-      $content .= '<td>'.$row[4].'</td>';
-      $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
-      $content .= '<td><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
+      $content .= '<tr class="article"><td class="col-xs-3">'.$row[1].'</td>';
+      $content .= '<td class="col-xs-6">'.substr($row[3], 0, 70).'...</td>';
+      $content .= '<td class="col-xs-1">'.$row[4].'</td>';
+      $content .= '<td class="col-xs-1">'.$row[5].'/'.$row[6].'</td>';
+      $content .= '<td class="col-xs-1"><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
     $content .= '</table></div>';
