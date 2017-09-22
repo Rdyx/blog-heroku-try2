@@ -20,8 +20,12 @@
   
 
   if(!empty($searchInput)){
-    $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' OR art_content LIKE '%".$searchInput."%'");
+    $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%'");
     $content = boucle($search);
+    if(empty($content)){
+      $content = '<div class="row"><h1>Désolé !</h1><div>';
+      $content .= '<div class="row"><p>Il n\existe aucun article contenant "'.$searchInput.' !"</p></div>';
+    };
   };
 
 
