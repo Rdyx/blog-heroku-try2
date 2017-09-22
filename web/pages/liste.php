@@ -63,7 +63,7 @@
       $content .= '<td class="col-xs-1"><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
-    $content .= '</table></div>';
+    $content .= '</table><ul class="pagination"></ul></div>';
     return $content;
   }
 
