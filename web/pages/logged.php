@@ -63,7 +63,9 @@
 								</select>
 							</li>
 							<li>
-								'.$content .= boucle(date('Y')).'
+								<select name="annee" id="annee">
+								'.$content .= boucle(date('Y'), -10001, '>').'
+								</select>
 							</li>
 						</ul>
 						</div>
@@ -76,12 +78,12 @@
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
 		};
 
-		function boucle($arg1){
-			$content .= '<select name="annee" id="annee">';
-		    for($i = $arg1; $i > -10001; $i--){
+		$monthArray = array(12,11,10,09,08,07,06,05,04,03,02,01);
+
+		function boucle($arg1, $arg2, $sign){
+		    for($i = $arg1; $i $sign $arg2; $i--){
 		      $content .= '<option>'.$i.'</option>';
 		    }
-		    $content .= '</select>';
 		    return $content;
 		  }
 
