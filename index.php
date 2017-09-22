@@ -21,8 +21,8 @@
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-right">
                     <ul class="list-inline">
-                      <li>'.$row[4].'</li>
-                      <li><a href="?id='.$row[0].'"><h1>Voir les commentaires</h1></a></li>
+                      <li><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></li>
+                      <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                     </ul>
                   </div>';
   }
@@ -33,7 +33,7 @@
     $content .= '<div class="row"><p> '.$row[3].' <p></div>';
     $content .= '<div class="row text-right">
                   <ul class="list-inline">
-                    <li>'.$row[4].'</li>
+                    <li><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                   </ul>
                 </div>';
@@ -41,13 +41,30 @@
 }
 
 $id = htmlspecialchars($_GET['id']);
+
 if($id == ""){
 } else {
   $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
   $row = pg_fetch_row($selection);
   $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
   $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-  $content .= '<div class="row text-right">'.$row[4].'</div>';
+  $content .= '<div class="row text-right"><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></div>';
+}
+
+$genre = htmlspecialchars($_GET['genre']);
+
+if($genre == ""){
+} else {
+  $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."'");
+  $row = pg_fetch_row($selection);
+  $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
+  $content .= '<div class="row"><p> '.$row[3].' <p></div>';
+  $content .= '<div class="row text-right">
+                  <ul class="list-inline">
+                    <li><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></li>
+                    <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
+                  </ul>
+                </div>'
 }
 
 include ('web/layout/layout.php');
