@@ -86,6 +86,7 @@ function boucle($arg1){
                 </ul>
               </div>';
 }
+  return $content;
 }
 
 
