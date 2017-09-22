@@ -22,7 +22,7 @@
   //     $content .= '<div class="row"><p> '.$row[3].' <p></div>';
   //   }
   // } else {
-    $search = "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%'";
+    $search = "SELECT * FROM articles WHERE art_title LIKE '%%%s%%'";
     pg_query($dbconn, $search);
     while($row = pg_fetch_row($search)){
       $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
