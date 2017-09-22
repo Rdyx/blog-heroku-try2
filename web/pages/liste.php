@@ -43,7 +43,7 @@
 
     function boucle($arg1){
     	$content .= '<div class="row">
-    				<table class="table-striped table-bordered table-responsive">
+    				<table class="table-striped table-bordered table-responsive" id="table-articles>
     					<tr>
     						<th class="text-center col-xs-3">Titre</th>
     						<th class="text-center col-xs-6">Résumé</th>
@@ -51,10 +51,7 @@
     						<th class="text-center col-xs-1">Date de parution</th>
     						<th class="col-xs-1">En savoir plus</th>
     					</tr>
-    				</div>
-    				<div class="row">
-    					<table class="table-striped table-bordered table-responsive" id="table-articles">
-    						<tbody class="list">';
+    					<tbody class="list">';
 
     while($row = pg_fetch_row($arg1)){
       $content .= '<tr class="article"><td class="col-xs-3">'.$row[1].'</td>';
@@ -64,7 +61,11 @@
       $content .= '<td class="col-xs-1"><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
-    $content .= '</tbody></table><ul class="pagination"></ul></div>';
+    $content .= '</tbody>
+    			</table>
+    			<ul class="pagination"></ul>
+    			</div>';
+    			
     return $content;
   }
 
@@ -93,7 +94,7 @@
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="../js/table-list.js"></script>
 </body>
 </html>
