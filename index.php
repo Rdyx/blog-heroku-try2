@@ -13,7 +13,7 @@
   include ('web/bdd/linkbdd.php');
 
 
-  $result = pg_query($dbconn, 'select * from articles');
+  $result = pg_query($dbconn, 'SELECT * FROM articles');
   $content = boucle($result);
   
   $searchInput = htmlspecialchars($_POST['search']);
@@ -21,7 +21,7 @@
   if(!empty($searchInput)){
   $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' OR art_content LIKE '%".$searchInput."%'");
   $content = boucle($search);
-}
+};
 
 $id = htmlspecialchars($_GET['id']);
 
