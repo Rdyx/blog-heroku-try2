@@ -61,11 +61,10 @@
 
 		function boucleDate($arg1){
 			$content .= '<select>';
-			for($i = 0; $i < $arg1; $i++){
+			for($i = 1; $i < =$arg1; $i++){
 				$content .= '<option>'.$i.'</option>';
 			}
 			$content .= '</select>';
-			return $content;
 		}
 
 
