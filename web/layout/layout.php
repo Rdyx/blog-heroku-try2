@@ -3,5 +3,5 @@
 	<div class="col-xs-offset-1 col-xs-10 list">
 		<?php echo $content ?>
 	</div>
-	<ul class="pagination"></ul>
+	<ul class="sync-pagination"></ul>
 </div>

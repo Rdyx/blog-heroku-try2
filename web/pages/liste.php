@@ -57,7 +57,7 @@
     						<tbody class="list">';
 
     while($row = pg_fetch_row($arg1)){
-      $content .= '<tr class="article"><td class="col-xs-3">'.$row[1].'</td>';
+      $content .= '<tr><td class="col-xs-3 article">'.$row[1].'</td>';
       $content .= '<td class="col-xs-6">'.substr($row[3], 0, 70).'...</td>';
       $content .= '<td class="col-xs-1">'.$row[4].'</td>';
       $content .= '<td class="col-xs-1">'.$row[5].'/'.$row[6].'</td>';
