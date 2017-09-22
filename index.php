@@ -21,7 +21,7 @@
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-right">
                     <ul class="list-inline">
-                      <li><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></li>
+                      <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
                       <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                     </ul>
                   </div>';
@@ -33,7 +33,7 @@
     $content .= '<div class="row"><p> '.$row[3].' <p></div>';
     $content .= '<div class="row text-right">
                   <ul class="list-inline">
-                    <li><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></li>
+                    <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                   </ul>
                 </div>';
@@ -48,7 +48,7 @@ if($id == ""){
   $row = pg_fetch_row($selection);
   $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
   $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-  $content .= '<div class="row text-right"><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></div>';
+  $content .= '<div class="row text-right"><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></div>';
 }
 
 $genre = htmlspecialchars($_GET['genre']);
@@ -61,7 +61,7 @@ if($genre == ""){
   $content .= '<div class="row"><p> '.$row[3].' <p></div>';
   $content .= '<div class="row text-right">
                   <ul class="list-inline">
-                    <li><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></li>
+                    <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                   </ul>
                 </div>';
