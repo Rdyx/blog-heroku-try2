@@ -47,10 +47,23 @@
 							</li>
 							<li>Date de parution</li>
 							<li>
-								<input type="number" id="mois" name="mois" placeholder="Mois">
+								<select name="mois" id="mois">
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+									<option>04</option>
+									<option>05</option>
+									<option>06</option>
+									<option>07</option>
+									<option>08</option>
+									<option>09</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+								</select>
 							</li>
 							<li>
-								<input type="number" id="annee" name="annee" placeholder="Année">
+								'.$content .= boucle(date('Y')).'
 							</li>
 						</ul>
 						</div>
@@ -63,8 +76,19 @@
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
 		};
 
+		function boucle($arg1){
+			$content .= '<select name="annee" id="annee">';
+		    for($i = $arg1; $i > -10001; $i--){
+		      $content .= '<option>'.$i.'</option>';
+		    }
+		    $content .= '</select>';
+		    return $content;
+		  }
 
 		include ('../layout/layout.php');
 		?>
+
 </body>
 </html>
+
+<!-- // <input type="number" id="mois" name="mois" placeholder="Mois"> -->
