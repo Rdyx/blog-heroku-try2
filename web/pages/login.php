@@ -8,13 +8,26 @@
 <body>
 	<?php include ('../layout/navbar.php');
 
-	$content = '<form action="logged.php" method="post">
-		<label for="pseudo">Pseudo</label>
-		<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
-		<label for="pwd">Mot de passe</label>
-		<input type="password" id="pwd" name="pwd" placeholder="Mot de passe" required>
-		<input type="submit" value="Connexion">
-	</form>';
+	$content = '<div class="row"><h1>Login Admin</h1></div>
+			<form action="logged.php" method="post">
+				<div class="row">
+				<label for="pseudo">Pseudo</label>
+				</div>
+				<div class="row">
+				<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
+				</div>
+				<div class="row">
+				<br>
+				<label for="pwd">Mot de passe</label>
+				</div>
+				<div class="row">
+				<input type="password" id="pwd" name="pwd" placeholder="Mot de passe" required>
+				</div>
+				<div class="row">
+				<br>
+				<input type="submit" value="Connexion">
+				</div>
+			</form>';
 
 	include ('../layout/layout.php');
 

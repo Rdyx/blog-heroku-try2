@@ -22,13 +22,12 @@
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';
     }
   } else {
-    $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%'");
+    $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' OR art_content LIKE '%".$searchInput."%'");
     while($row = pg_fetch_row($search)){
       $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-   }
+    }
   }
-
 
   include ('web/layout/layout.php');
 
