@@ -14,7 +14,7 @@
 
   $colSelect = htmlspecialchars($_POST['colSelect']);
   $orderSelect = htmlspecialchars($_POST['orderSelect']);
-  $order = "ORDER BY art_oid DESC"
+  $order = "ORDER BY art_oid DESC";
 
   if($orderSelect == "Ordre croissant"){
   	if($colSelect == "Titre"){
