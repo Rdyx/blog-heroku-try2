@@ -13,7 +13,7 @@
   include ('web/bdd/linkbdd.php');
 
 
-  $result = pg_query($dbconn, 'SELECT * FROM articles ORDER BY art_oid ASC');
+  $result = pg_query($dbconn, 'SELECT * FROM articles ORDER BY art_oid DESC');
   $content = boucle($result);
   
   $searchInput = htmlspecialchars($_POST['search']);
