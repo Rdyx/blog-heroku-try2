@@ -14,7 +14,7 @@
 				<label for="pseudo">Pseudo</label>
 				</div>
 				<div class="row">
-				<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
+				<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo ou Email" required>
 				</div>
 				<div class="row">
 				<br>

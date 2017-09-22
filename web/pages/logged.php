@@ -16,7 +16,7 @@
 		$pwd = strtoupper(hash('sha256', htmlspecialchars($_POST['pwd'])));
 		$nick = htmlspecialchars($_POST['pseudo']);
 
-		if($nick == $row[0] && $pwd == $row[1]){
+		if(($nick == $row[0] || $nick == $row[3]) && $pwd == $row[1]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
 				</div>
