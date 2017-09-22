@@ -33,10 +33,10 @@
 
   if($_GET['id'] == ""){
   } else {
-    $selection = pg_query($dbconn, "SELECT art_oid FROM articles WHERE art_oid LIKE '".$_GET['id']."'"));
+    $selection = pg_query($dbconn, "SELECT art_oid FROM articles WHERE art_oid LIKE '".$_GET['id']."'");
     $row = pg_fetch_row($selection);
     $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
-      $content .= '<div class="row"><p> '.$row[3].' <p></div>';
+    $content .= '<div class="row"><p> '.$row[3].' <p></div>';
   }
 
   include ('web/layout/layout.php');
