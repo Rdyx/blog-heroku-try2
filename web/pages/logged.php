@@ -46,8 +46,12 @@
 								</select>
 							</li>
 							<li>Date de parution</li>
-							<li>'.$content .= boucleDate(12).'</li>
-							<li>'.$content .= boucleDate(date('Y')).'</li>
+							<li>
+								<input type="number" id="mois" name="mois" placeholder="Mois">
+							</li>
+							<li>
+								<input type="number" id="annee" name="annee" placeholder="Année">
+							</li>
 						</ul>
 						</div>
 						<div class="row">
@@ -58,14 +62,6 @@
 		} else {
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
 		};
-
-		function boucleDate($arg1){
-			$content .= '<select>';
-			for($i = 1; $i < =$arg1; $i++){
-				$content .= '<option>'.$i.'</option>';
-			}
-			$content .= '</select>';
-		}
 
 
 		include ('../layout/layout.php');
