@@ -24,8 +24,7 @@
 			pg_query($dbconn, "INSERT INTO articles (art_title, art_content, art_genre, art_month, art_year) VALUES ('".$artTitle."', '".$artContent."', '".$artGenre."', '".$artMois."', '".$artAnnee."')");
 			$content = '<div class="row"><h1>Success !</h1> <br> <a href="../../index.php">Retour à l\'index</a></div>';
 		};
-
-		echo $artTitle.$artContent.$artGenre.$artMois.$artAnnee;
+		
 		include ('../layout/layout.php');
 
 	?>

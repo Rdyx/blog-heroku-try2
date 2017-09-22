@@ -23,18 +23,19 @@
     						<th>Résumé</th>
     						<th>Theme</th>
     						<th>Date de parution</th>
-    						<th>Lien direct</th>'
+    						<th>Lien direct</th>
+    					</tr>
+    					<tr>';
+
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
-      $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-      $content .= '<div class="row text-right">
-                  <ul class="list-inline">
-                    <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
-                    <li> - </li>
-                    <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
-                  </ul>
-                </div>';
+      $content .= '<td>'.$row[1].'</td>';
+      $content .= '<td>'.substr($row[3], 0, 70).'</td>';
+      $content .= '<td>'.$row[4].'</td>';
+      $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
+      $content .= '<td><a href="../../index.php?id='.$row[0].'">Lien direct</a></td>';
     }
+
+    $content .= '</tr></table>';
     return $content;
   }
 
