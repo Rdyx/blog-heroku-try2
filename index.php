@@ -20,37 +20,38 @@
       $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
       $content .= '<div class="row"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-right">
-                  <ul class="list-inline">
-                    <li>'.$row[4].'</li>
-                    <li><a href="?id='.$row[0].'"><h1>#'.$row[0].'</h1></a></li>
-                  </ul>
+                    <ul class="list-inline">
+                      <li>'.$row[4].'</li>
+                      <li><a href="?id='.$row[0].'"><h1>#'.$row[0].'</h1></a></li>
+                    </ul>
                   </div>';
-    }
-  } else {
-    $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' OR art_content LIKE '%".$searchInput."%'");
-    while($row = pg_fetch_row($search)){
-      $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
-      $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-      $content .= '<div class="row text-right">
+  }
+} else {
+  $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' OR art_content LIKE '%".$searchInput."%'");
+  while($row = pg_fetch_row($search)){
+    $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
+    $content .= '<div class="row"><p> '.$row[3].' <p></div>';
+    $content .= '<div class="row text-right">
                   <ul class="list-inline">
                     <li>'.$row[4].'</li>
                     <li><a href="?id='.$row[0].'">#'.$row[0].'</a></li>
                   </ul>
-                  </div>';
-    }
-  }
+                </div>';
+}
+}
 
-    if($id == ""){
-    } else {
-      $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
-      $row = pg_fetch_row($selection);
-        $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
-        $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-    }
+$id = htmlspecialchars($_GET['id']);
+if($id == ""){
+} else {
+  $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
+  $row = pg_fetch_row($selection);
+  $content = '<div class="row"><h1> '.$row[1].' </h1></div>';
+  $content .= '<div class="row"><p> '.$row[3].' <p></div>';
+}
 
-  include ('web/layout/layout.php');
+include ('web/layout/layout.php');
 
-  ?>
+?>
 
 
 </body>
