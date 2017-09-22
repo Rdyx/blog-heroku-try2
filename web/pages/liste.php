@@ -12,6 +12,10 @@
   include ("../layout/navbar.php");
   include ('../bdd/linkbdd.php');
 
+  $colSelect = htmlspecialchars($_POST['colSelect']);
+  $orderSelect = htmlspecialchars($_POST['orderSelect']);
+  $order = "ORDER BY art_oid DESC"
+
   if($orderSelect == "Ordre croissant"){
   	if($colSelect == "Titre"){
   		$order = "ORDER BY art_title ASC";
@@ -36,8 +40,6 @@
 
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
-  $colSelect = htmlspecialchars($_POST['colSelect']);
-  $orderSelect = htmlspecialchars($_POST['orderSelect']);
 
     function boucle($arg1){
     	$content .= '<div class="row"><table class="table-striped table-bordered table-responsive">
