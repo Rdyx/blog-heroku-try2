@@ -22,19 +22,19 @@
   	} if($colSelect == "Résumé"){
   		$order = "ORDER BY art_content ASC";
   	} if($colSelect == "Thème"){
-  		$order == "ORDER BY art_genre ASC"; 
+  		$order = "ORDER BY art_genre ASC"; 
   	} if($colSelect == "Date de parution"){
-  		$order == "ORDER BY art_month ASC, art_year ASC";
+  		$order = "ORDER BY art_month ASC, art_year ASC";
   	};
   } if($orderSelect == "Ordre décroissant"){
   	  if($colSelect == "Titre"){
-  		$order == "ORDER BY art_title DESC";
+  		$order = "ORDER BY art_title DESC";
   	  } if($colSelect == "Résumé"){
-  	  	$order == "ORDER BY art_content DESC";
+  	  	$order = "ORDER BY art_content DESC";
   	  } if($colSelect == "Thème"){
-  	  	$order == "ORDER BY art_genre DESC";
+  	  	$order = "ORDER BY art_genre DESC";
   	  } if($colSelect == "Date de parution"){
-  	  	$order == "ORDER BY art_month DESC, art_year DESC";
+  	  	$order = "ORDER BY art_month DESC, art_year DESC";
   	  }
   }
 
