@@ -21,7 +21,7 @@
 		if(empty($artTitle) || empty($artContent) || strlen($artTitle) > 50 || strlen($artContent) > 1000 || $artMois <= 0 || $artMois > 12 || empty($artMois) || $artAnnee <= -10001 || $artAnnee > date('Y') || empty($artAnnee)){
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="login.php">Retour</a></div>';
 		} else {
-			pg_query($dbconn, "INSERT INTO articles (art_title, art_content, art_genre, art_month, art_years) VALUES ('".$artTitle."', '".$artContent."', '".$artGenre."', '".$artMois."'");
+			pg_query($dbconn, "INSERT INTO articles (art_title, art_content, art_genre, art_month) VALUES ('".$artTitle."', '".$artContent."', '".$artGenre."', '".$artMois."'");
 			$content = '<div class="row"><h1>Success !</h1> <br> <a href="../../index.php">Retour à l\'index</a></div>';
 		};
 
