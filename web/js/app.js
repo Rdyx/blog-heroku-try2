@@ -1,5 +1,5 @@
-new List('test-list', {
-  valueNames: ['name'],
+new List('list-articles', {
+  valueNames: ['article'],
   page: 3,
   pagination: true
 });
