@@ -33,7 +33,7 @@
   	  	$order == "ORDER BY art_month DESC, art_year DESC";
   	  }
   }
-  
+
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
   $colSelect = htmlspecialchars($_POST['colSelect']);
@@ -73,7 +73,7 @@
 	  						<option>Ordre croissant</option>
 	  						<option>Ordre décroissant</option>
 	  					</select>
-	  					<button type="submit" value="Trier">
+	  					<button type="submit">Trier</button>
 	  				</form>
 	  			</div>';
 
