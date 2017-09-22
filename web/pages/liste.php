@@ -42,14 +42,18 @@
   $content = boucle($result);
 
     function boucle($arg1){
-    	$content .= '<div class="row" id="table-articles"><table class="table-striped table-bordered table-responsive list">
+    	$content .= '<div class="row">
+    				<table class="table-striped table-bordered table-responsive">
     					<tr>
     						<th class="text-center">Titre</th>
     						<th class="text-center">Résumé</th>
     						<th class="text-center">Thème</th>
     						<th class="text-center">Date de parution</th>
     						<th></th>
-    					</tr>';
+    					</tr>
+    				</div>
+    				<div class="row" id="table-articles">
+    					<table class="table-striped table-bordered table-responsive list">';
 
     while($row = pg_fetch_row($arg1)){
       $content .= '<tr class="article"><td>'.$row[1].'</td>';
