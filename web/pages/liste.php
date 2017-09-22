@@ -36,10 +36,13 @@
   	  } if($colSelect == "Date de parution"){
   	  	$order = "ORDER BY art_month DESC, art_year DESC";
   	  }
-  } 
+  }
 
+  $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
+  $content = boucle($result);
 
-$content = 	'<div class="row">
+    function boucle($arg1){
+    	$content = 	'<div class="row">
   				<form action="" method="post">
   					<select name="colSelect" id="colSelect">
   						<option>Titre</option>
@@ -54,12 +57,7 @@ $content = 	'<div class="row">
   					<button type="submit">Trier</button>
   				</form>
   			</div>';
-
-
-  $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
-  $content = boucle($result);
-
-    function boucle($arg1){
+  			
     	$content .= '<div class="row">
     				<table class="table-striped table-bordered table-responsive" id="table-articles">
     					<tr>
