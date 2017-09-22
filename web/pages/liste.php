@@ -52,8 +52,8 @@
     						<th class="col-xs-1">En savoir plus</th>
     					</tr>
     				</div>
-    				<div class="row" id="table-articles">
-    					<table class="table-striped table-bordered table-responsive">
+    				<div class="row">
+    					<table class="table-striped table-bordered table-responsive" id="table-articles">
     						<tbody class="list">';
 
     while($row = pg_fetch_row($arg1)){
