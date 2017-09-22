@@ -14,22 +14,25 @@
 
   $searchInput = htmlspecialchars($_POST['search']);
 
+  $result = pg_query($dbconn, 'select * from articles');
+  $content = boucle($result);
+  
   if($searchInput == ""){
     $result = pg_query($dbconn, 'select * from articles');
-    while($row = pg_fetch_row($result)){
-      $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
-      $content .= '<div class="row"><p> '.$row[3].' <p></div>';
-      $content .= '<div class="row text-right">
-                    <ul class="list-inline">
-                      <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
-                      <li> - </li>
-                      <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
-                    </ul>
-                  </div>';
-  }
+    // while($row = pg_fetch_row($result)){
+    //   $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
+    //   $content .= '<div class="row"><p> '.$row[3].' <p></div>';
+    //   $content .= '<div class="row text-right">
+    //                 <ul class="list-inline">
+    //                   <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
+    //                   <li> - </li>
+    //                   <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
+    //                 </ul>
+    //               </div>';
+  //}
 } else {
   $search = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' OR art_content LIKE '%".$searchInput."%'");
-  $content .= boucle($search);
+  $content = boucle($search);
 //   while($row = pg_fetch_row($search)){
 //     $content .= '<div class="row"><h1> '.$row[1].' </h1></div>';
 //     $content .= '<div class="row"><p> '.$row[3].' <p></div>';
