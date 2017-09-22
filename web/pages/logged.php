@@ -55,7 +55,7 @@
 						</ul>
 						</div>
 						<div class="row">
-						<br><input type="submit" value="Poster" id="postArt">
+						<br><input type="submit" value="Poster">
 						</div>
 					</form>
 				</div>';
