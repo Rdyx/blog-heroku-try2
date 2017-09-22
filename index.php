@@ -59,10 +59,10 @@
                 </div>
                 </div>';
     }
+    $content .= '<div class="row"><ul class="pagination"></ul></div>';
     return $content;
   }
 
-  $content .= '<div class="row"><ul class="pagination"></ul></div>';
 include ('web/layout/layout.php');
 
 ?>
