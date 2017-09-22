@@ -45,7 +45,7 @@
   } else {
   	$content .= "Erreur lors du tri ! Remise en ordre par défaut !";
   	$order = "ORDER BY art_oid DESC";
-  };
+  }
 
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
