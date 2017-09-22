@@ -47,12 +47,12 @@
 
   function boucle($arg1){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row well well-sm"><div class="row"><h1> '.$row[1].' </h1></div>';
-      $content .= '<div class="row"><p> '.$row[3].' <p></div>';
+      $content .= '<div class="row well well-sm"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
+      $content .= '<div class="container text-justify"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-right">
                   <ul class="list-inline">
-                    <li>Date de parution de l\'ouvrage : '.$row[5].'/'.$row[6].'</li>
-                    <li><a href="?genre='.$row[4].'">Thème : '.$row[4].'</a></li>
+                    <li>Date de parution de l\'ouvrage : <strong>'.$row[5].'/'.$row[6].'</strong></li>
+                    <li><a href="?genre='.$row[4].'">Thème : <strong>'.$row[4].'</strong></a></li>
                     <li> - </li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                   </ul>
