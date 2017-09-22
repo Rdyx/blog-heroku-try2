@@ -56,9 +56,9 @@
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                   </ul>
                 </div>';
+    }
+    return $content;
   }
-  return $content;
-}
 
 
 include ('web/layout/layout.php');
