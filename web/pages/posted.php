@@ -14,11 +14,12 @@
 
 		$artTitle = htmlspecialchars($_POST['titre']);
 		$artContent = htmlspecialchars($_POST['contenu']);
+		$artGenre = htmlspecialchars($_POST['genre']);
 
 		if($artTitle == "" || $artContent == "" || strlen($artTitle) > 50 || strlen($artContent) > 1000){
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="login.php">Retour</a></div>';
 		} else {
-			pg_query($dbconn, "INSERT INTO articles (art_title, art_content) VALUES ('".$artTitle."', '".$artContent."')");
+			pg_query($dbconn, "INSERT INTO articles (art_title, art_content, art_genre) VALUES ('".$artTitle."', '".$artContent."', '".$artGenre."')");
 			$content = '<div class="row"><h1>Success !</h1> <br> <a href="../../index.php">Retour à l\'index</a></div>';
 		};
 

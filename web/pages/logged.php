@@ -10,7 +10,7 @@
 
 		include ('../layout/navbar.php');
 		include ('../bdd/linkbdd.php');
-		
+
 		$test = pg_query($dbconn, 'select * from admin');
 		$row = pg_fetch_row($test);
 		$pwd = strtoupper(hash('sha256', htmlspecialchars($_POST['pwd'])));
@@ -33,6 +33,15 @@
 						</div>
 						<div class="row">
 						<textarea name="contenu" id="contenu" cols="75" rows="10" placeholder="Votre texte..." maxlength="1000" required></textarea>
+						</div>
+						<div class="row">
+						<select name="genre">
+							<option>Essence</option>
+							<option>Diesel</option>
+							<option>Nucléaire</option>
+							<option>Soleil</option>
+							<option>Electrique</option>
+						</select>
 						</div>
 						<div class="row">
 						<input type="submit" value="Poster" id="postArt">
