@@ -52,11 +52,11 @@
     						<th class="col-xs-1">En savoir plus</th>
     					</tr>
     				</div>
-    				<div class="row">
-    					<table class="table-striped table-bordered table-responsive"  id="table-articles">';
+    				<div class="row" id="table-articles">
+    					<table class="table-striped table-bordered table-responsive list">';
 
     while($row = pg_fetch_row($arg1)){
-      $content .= '<tr class="list"><td class="col-xs-3 article">'.$row[1].'</td>';
+      $content .= '<tr class="article"><td class="col-xs-3">'.$row[1].'</td>';
       $content .= '<td class="col-xs-6">'.substr($row[3], 0, 70).'...</td>';
       $content .= '<td class="col-xs-1">'.$row[4].'</td>';
       $content .= '<td class="col-xs-1">'.$row[5].'/'.$row[6].'</td>';
@@ -92,7 +92,7 @@
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="../js/table-list.js"></script>
 </body>
 </html>
