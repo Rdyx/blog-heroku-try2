@@ -53,7 +53,8 @@
     					</tr>
     				</div>
     				<div class="row" id="table-articles">
-    					<table class="table-striped table-bordered table-responsive list">';
+    					<table class="table-striped table-bordered table-responsive">
+    						<tbody class="list">';
 
     while($row = pg_fetch_row($arg1)){
       $content .= '<tr class="article"><td class="col-xs-3">'.$row[1].'</td>';
@@ -63,7 +64,7 @@
       $content .= '<td class="col-xs-1"><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
-    $content .= '</table><ul class="pagination"></ul></div>';
+    $content .= '</tbody></table><ul class="pagination"></ul></div>';
     return $content;
   }
 
