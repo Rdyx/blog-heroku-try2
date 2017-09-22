@@ -47,7 +47,7 @@
 
   function boucle($arg1){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row well well-lg"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
+      $content .= '<div class="row well well-lg list"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
       $content .= '<div class="row text-justify"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-right">
                   <ul class="list-inline">
@@ -62,11 +62,16 @@
     return $content;
   }
 
-
+  $content .= '<div class="row"><ul class="pagination"></ul></div>'
 include ('web/layout/layout.php');
 
 ?>
 
-
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="../js/app.js"></script>
 </body>
 </html>
