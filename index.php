@@ -64,7 +64,7 @@ if($genre == ""){
                     <li><a href="?genre='.$row[4].'>Thème : '.$row[4].'</a></li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                   </ul>
-                </div>'
+                </div>';
 }
 
 include ('web/layout/layout.php');
