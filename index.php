@@ -59,7 +59,7 @@
                 </div>
                 </div>';
     }
-    $content .= '<div class="row"><ul class="pagination"></ul></div>';
+    $content .= '<ul class="pagination"></ul>';
     return $content;
   }
 
