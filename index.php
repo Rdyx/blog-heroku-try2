@@ -13,6 +13,7 @@
   include ('web/bdd/linkbdd.php');
 
   $searchInput = htmlspecialchars($_POST['search']);
+  echo $searchInput;
 
   if($searchInput == ""){
     $result = pg_query($dbconn, 'select * from articles');
