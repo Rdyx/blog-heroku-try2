@@ -43,13 +43,12 @@
 
     function boucle($arg1){
     	$content .= '<div class="row">
-    				<table class="table-striped table-bordered table-responsive" id="table-articles>
+    				<table class="table-striped table-bordered table-responsive" id="table-articles">
     					<tr>
     						<th class="text-center col-xs-3">Titre</th>
     						<th class="text-center col-xs-6">Résumé</th>
     						<th class="text-center col-xs-1">Thème</th>
     						<th class="text-center col-xs-1">Date de parution</th>
-    						<th class="col-xs-1">En savoir plus</th>
     					</tr>
     					<tbody class="list">';
 
@@ -65,7 +64,7 @@
     			</table>
     			<ul class="pagination"></ul>
     			</div>';
-    			
+
     return $content;
   }
 
