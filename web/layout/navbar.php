@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
 		<li><a href="../../index.php">Accueil</a></li>
-			<li><a href="">Link</a></li>
+			<li><a href="/web/pages/liste.php">Link</a></li>
 			<li><a href="/web/pages/login.php">Login</a></li>
 		</ul>
 		<form action="../../index.php" method="post" class="navbar-form navbar-right">

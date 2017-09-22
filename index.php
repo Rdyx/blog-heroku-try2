@@ -13,7 +13,7 @@
   include ('web/bdd/linkbdd.php');
 
 
-  $result = pg_query($dbconn, 'SELECT * FROM articles');
+  $result = pg_query($dbconn, 'SELECT * FROM articles ORDER BY art_oid ASC');
   $content = boucle($result);
   
   $searchInput = htmlspecialchars($_POST['search']);
@@ -33,7 +33,8 @@
 
   if(!empty($id)){
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
-    $content = boucle($selectId);  
+    $content = boucle($selectId);
+    // include ('web/layout/comments.php'); 
   };
 
 
