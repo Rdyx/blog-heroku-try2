@@ -24,8 +24,9 @@
 };
 
 $id = htmlspecialchars($_GET['id']);
+echo $id;
 
-if($id == ""){} else {
+if(!empty($id)){
   $selection = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
   $content = boucle($id);  
 };
