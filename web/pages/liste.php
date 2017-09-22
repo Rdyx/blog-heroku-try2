@@ -36,10 +36,7 @@
   	  } if($colSelect == "Date de parution"){
   	  	$order = "ORDER BY art_month DESC, art_year DESC";
   	  }
-  } else {
-  	$content .= "Erreur de tri, ordre par défaut.";
-  	$order = "ORDER BY art_oid DESC";
-  }
+  } 
 
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
@@ -55,7 +52,7 @@
     					</tr>';
 
     while($row = pg_fetch_row($arg1)){
-      $content .= '<tr><td>'.$row[1].'</td>';
+      $content .= '<tr class="article"><td>'.$row[1].'</td>';
       $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
@@ -87,6 +84,11 @@
 
 ?>
 
-
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="web/js/app.js"></script>
 </body>
 </html>
