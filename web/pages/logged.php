@@ -46,8 +46,8 @@
 								</select>
 							</li>
 							<li>Date de parution</li>
-							<li>'.boucleDate(12).'</li>
-							<li>'.boucleDate(date('Y')).'</li>
+							<li>'.$content .= boucleDate(12).'</li>
+							<li>'.$content .= boucleDate(date('Y')).'</li>
 						</ul>
 						</div>
 						<div class="row">
@@ -65,6 +65,7 @@
 				$content .= '<option>'.$i.'</option>';
 			}
 			$content .= '</select>';
+			return $content;
 		}
 
 
