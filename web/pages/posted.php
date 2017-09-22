@@ -17,7 +17,7 @@
 		$artGenre = htmlspecialchars($_POST['genre']);
 		$artMois = htmlspecialchars($_POST['mois']);
 		$artAnnee = htmlspecialchars($_POST['annee']);
-
+		
 		if(empty($artTitle) || empty($artContent) || strlen($artTitle) > 50 || strlen($artContent) > 1000 || $artMois <= 0 || $artMois > 12 || empty($artMois) || $artAnnee <= -10001 || $artAnnee > date('Y') || empty($artAnnee)){
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="login.php">Retour</a></div>';
 		} else {
