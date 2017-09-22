@@ -38,6 +38,24 @@
   	  }
   } 
 
+
+$content .= 	'<div class="row">
+  				<form action="" method="post">
+  					<select name="colSelect" id="colSelect">
+  						<option>Titre</option>
+  						<option>Résumé</option>
+  						<option>Thème</option>
+  						<option>Date de parution</option>
+  					</select>
+  					<select name="orderSelect" id="orderSelect">
+  						<option>Ordre croissant</option>
+  						<option>Ordre décroissant</option>
+  					</select>
+  					<button type="submit">Trier</button>
+  				</form>
+  			</div>';
+
+
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
 
@@ -67,23 +85,6 @@
 
     return $content;
   }
-
-  $content .= 	'<div class="row">
-	  				<form action="" method="post">
-	  					<select name="colSelect" id="colSelect">
-	  						<option>Titre</option>
-	  						<option>Résumé</option>
-	  						<option>Thème</option>
-	  						<option>Date de parution</option>
-	  					</select>
-	  					<select name="orderSelect" id="orderSelect">
-	  						<option>Ordre croissant</option>
-	  						<option>Ordre décroissant</option>
-	  					</select>
-	  					<button type="submit">Trier</button>
-	  				</form>
-	  			</div>';
-
 
   include ('../layout/layout.php');
 
