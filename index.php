@@ -47,9 +47,9 @@
 
   function boucle($arg1){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="container well well-sm"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
-      $content .= '<div class="container text-justify"><p> '.$row[3].' <p></div>';
-      $content .= '<div class="container text-right">
+      $content .= '<div class="row"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
+      $content .= '<div class="row text-justify"><p> '.$row[3].' <p></div>';
+      $content .= '<div class="row text-right">
                   <ul class="list-inline">
                     <li>Date de parution de l\'ouvrage : <strong>'.$row[5].'/'.$row[6].'</strong></li>
                     <li><a href="?genre='.$row[4].'">Thème : <strong>'.$row[4].'</strong></a></li>

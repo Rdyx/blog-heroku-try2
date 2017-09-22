@@ -23,7 +23,7 @@
     						<th class="text-center">Résumé</th>
     						<th class="text-center">Theme</th>
     						<th class="text-center">Date de parution</th>
-    						<th class="text-center">Lien direct</th>
+    						<th></th>
     					</tr>';
 
     while($row = pg_fetch_row($arg1)){
@@ -31,7 +31,7 @@
       $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
-      $content .= '<td><a href="../../index.php?id='.$row[0].'">Lien direct</a></td></tr>';
+      $content .= '<td><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
     $content .= '</table>';
