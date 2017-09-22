@@ -37,7 +37,7 @@
   	  	$order = "ORDER BY art_month DESC, art_year DESC";
   	  }
   } else {
-  	$content .= "Erreur lors du tri ! Remise en ordre par défaut !"
+  	$content .= "Erreur lors du tri ! Remise en ordre par défaut !";
   	$order = "ORDER BY art_oid DESC";
   }
 
