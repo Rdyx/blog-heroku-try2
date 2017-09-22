@@ -24,18 +24,17 @@
     						<th>Theme</th>
     						<th>Date de parution</th>
     						<th>Lien direct</th>
-    					</tr>
-    					<tr>';
+    					</tr>';
 
     while($row = pg_fetch_row($arg1)){
-      $content .= '<td>'.$row[1].'</td>';
+      $content .= '<tr><td>'.$row[1].'</td>';
       $content .= '<td>'.substr($row[3], 0, 70).'</td>';
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
-      $content .= '<td><a href="../../index.php?id='.$row[0].'">Lien direct</a></td>';
+      $content .= '<td><a href="../../index.php?id='.$row[0].'">Lien direct</a></td></tr>';
     }
 
-    $content .= '</tr></table>';
+    $content .= '</table>';
     return $content;
   }
 
