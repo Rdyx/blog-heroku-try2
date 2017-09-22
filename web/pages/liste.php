@@ -9,8 +9,8 @@
 
   <?php
 
-  include ("web/layout/navbar.php");
-  include ('web/bdd/linkbdd.php');
+  include ("../layout/navbar.php");
+  include ('../bdd/linkbdd.php');
 
   $order = 'ORDER BY art_oid DESC';
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
@@ -32,7 +32,7 @@
   }
 
 
-  include ('web/layout/layout.php');
+  include ('../layout/layout.php');
 
 ?>
 
