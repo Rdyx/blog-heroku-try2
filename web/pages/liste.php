@@ -17,7 +17,7 @@
   $content = boucle($result);
 
     function boucle($arg1){
-    	$content .= '<table class="table-striped table-bordered table-responsive">
+    	$content .= '<table class="text-center table-striped table-bordered table-responsive">
     					<tr>
     						<th>Titre</th>
     						<th>Résumé</th>
@@ -28,7 +28,7 @@
 
     while($row = pg_fetch_row($arg1)){
       $content .= '<tr><td>'.$row[1].'</td>';
-      $content .= '<td>'.substr($row[3], 0, 70).'</td>';
+      $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
       $content .= '<td><a href="../../index.php?id='.$row[0].'">Lien direct</a></td></tr>';
