@@ -39,7 +39,7 @@
   } 
 
 
-$content .= 	'<div class="row">
+$content = 	'<div class="row">
   				<form action="" method="post">
   					<select name="colSelect" id="colSelect">
   						<option>Titre</option>
