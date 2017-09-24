@@ -69,7 +69,8 @@
   				</form>
   			</div>';
   			
-    	$content .= '<div class="row" id="tableArticles">
+    	$content .= '<div class="row" id="table-articles">
+      <ul class="pagination"></ul>
     				<table class="row table-striped table-bordered table-responsive">
     					<tr>
     						<th class="text-center col-xs-3">Titre</th>
