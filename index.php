@@ -23,7 +23,7 @@ $rowLog = pg_fetch_row($connect);
 
   if(!empty($searchInput)){
     $search = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
-    $content = boucle($search);
+    $content = boucle($search, $rowLog[0]);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
       $content .= '<div class="row"><p>Il n\'existe aucun article contenant "<strong>'.$searchInput.'</strong>" !</p></div>';
@@ -35,7 +35,7 @@ $rowLog = pg_fetch_row($connect);
 
   if(!empty($id)){
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
-    $content = boucle($selectId, $rowLog);
+    $content = boucle($selectId, $rowLog[0]);
     // include ('web/layout/comments.php'); 
   };
 
@@ -44,7 +44,7 @@ $rowLog = pg_fetch_row($connect);
 
   if(!empty($genre)){
     $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."' ".$order);
-    $content = boucle($selectTheme, $rowLog);  
+    $content = boucle($selectTheme, $rowLog[0]);  
   };
 
   function boucle($arg1, $arg2){
