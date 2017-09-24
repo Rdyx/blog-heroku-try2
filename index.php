@@ -65,7 +65,7 @@ $rowLog = pg_fetch_row($connect);
                       <li><a href="web/pages/delete.php?id='.$row[0].'">Supprimer</a></li>
                     </ul>
                     </div>';
-      }
+      };
 
       $content.= '<div class="col-xs-12 text-right"><p>Article écrit par '.$row[8].' le '.$row[7].'</p></div>
                   <ul class="list-inline">
