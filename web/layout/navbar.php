@@ -11,6 +11,7 @@
 		<?php
 			} else { 
 		?>
+			<li><a href="/web/pages/post.php">Ecrire un article</a></li>
 			<li><a href="/web/pages/disconnect.php">Se déconnecter</a></li>
 		
 		<?php
