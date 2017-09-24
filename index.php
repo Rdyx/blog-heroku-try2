@@ -16,7 +16,10 @@
   $order = 'ORDER BY art_oid DESC';
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
-  
+  $connect = pg_query($dbconn, 'select * from admin');
+  $rowLog = pg_fetch_row($connect);
+
+
   $searchInput = htmlspecialchars($_POST['search']);
   
 
@@ -50,8 +53,18 @@
     while($row = pg_fetch_row($arg1)){
       $content .= '<div class="row well well-lg article"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
-      $content .= '<div class="row text-center">
-                  <div class="col-xs-12 text-right"><p>Article écrit par '.$row[8].' le '.$row[7].'</p></div>
+      $content .= '<div class="row text-center">';
+
+      if($_SESSION['nickname'] == $rowLog[0]){
+        $content .= '<div class="col-xs-12 text-right">
+                    <ul class="list-inline">
+                      <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
+                      <li><a href="web/pages/delete.php?id='.$row[0].'">Supprimer</a></li>
+                    </ul>
+                    </div>';
+      };
+
+      $content.= '<div class="col-xs-12 text-right"><p>Article écrit par '.$row[8].' le '.$row[7].'</p></div>
                   <ul class="list-inline">
                     <li>Date de parution de l\'ouvrage : <strong>'.$row[5].'/'.$row[6].'</strong></li>
                     <li> - </li>
@@ -59,7 +72,7 @@
                     <li> - </li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                     <li> - </li>
-                    <li><a href="#" alt="Back-To-The-Top !"><img alt="^" src="http://www.cfecgc.org/content/img/fleche-haut.png"></a></li>
+                    <li><a href="#" alt="Back-To-The-Top !"><img alt="^" src="http://www.dema-france.com/global/img/puces/fleche-haut.png"></a></li>
                   </ul>
                 </div>
                 </div>';

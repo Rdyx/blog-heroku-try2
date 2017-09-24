@@ -12,8 +12,8 @@
 		include ('../layout/navbar.php');
 		
 
-	$test = pg_query($dbconn, 'select * from admin');
-	$row = pg_fetch_row($test);
+	$connect = pg_query($dbconn, 'select * from admin');
+	$rowLog = pg_fetch_row($connect);
 
 		if($_SESSION['nickname'] == $row[0]){
 			$content = '<div class="row">
