@@ -47,7 +47,7 @@ $rowLog = pg_fetch_row($connect);
     $content = boucle($selectTheme, $rowLog[0]);  
   };
 
-  function boucle($arg1){
+  function boucle($arg1, $arg2){
 
   var_dump($rowLog[0].' // '.$row[0]. ' // ');
 
