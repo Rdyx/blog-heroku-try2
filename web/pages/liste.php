@@ -54,7 +54,6 @@
 
     function boucle($arg1){
     	$content = 	'<div class="row">
-          <a href="liste.php"><button>Par défaut</button></a>
   				<form action="" method="post">
   					<select name="colSelect" id="colSelect">
   						<option>Titre</option>
@@ -66,7 +65,8 @@
   						<option>Ordre croissant</option>
   						<option>Ordre décroissant</option>
   					</select>
-  					<button type="submit">Trier</button>
+  					<input type="submit" value="Trier">
+          <a href="liste.php"><button>Par défaut</button></a>
   				</form>
   			</div>';
   			
