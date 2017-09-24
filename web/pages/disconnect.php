@@ -12,14 +12,12 @@ session_destroy();
 <body>
 
   <?php
-  header("refresh:5; url=../../index.php.php");
+  header("refresh:5; url=../../index.php");
   include('../layout/session.php');
   include ('../layout/navbar.php');
 
-  $id = htmlspecialchars($_GET['id']);
-
   $content = '<div class="row"><h1>Vous vous êtes déconnecté avec succès !</h1></br>
-              <p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil</p></br>
+              <p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
               <a href="../../index.php">Retour à l\'accueil</a></div>';
 
   include ('../layout/layout.php');
