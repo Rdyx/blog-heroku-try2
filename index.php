@@ -56,6 +56,7 @@
       $content .= '<div class="row text-center">';
 
       if($_SESSION['nickname'] == $rowLog[0]){
+        var_dump('lol');
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
                       <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
