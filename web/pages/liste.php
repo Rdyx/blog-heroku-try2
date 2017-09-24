@@ -90,7 +90,7 @@
     				<table class="row table-striped table-bordered table-responsive">
     					<tr>
     						<th class="text-center col-xs-3">Titre</th>
-    						<th class="text-center col-xs-4">Résumé</th>
+    						<th class="text-center col-xs-5">Résumé</th>
     						<th class="text-center col-xs-1">Thème</th>
     						<th class="text-center col-xs-1">Date de parution</th>
     						<th class="text-center col-xs-2">Date de l\'article</th>
@@ -109,7 +109,7 @@
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
       $content .= '<td>'.$row[7].'</td>';
-      $content .= '<td><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
+      $content .= '<td><a href="article.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
     $content .= '</tbody>
