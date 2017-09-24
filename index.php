@@ -46,10 +46,6 @@
   };
 
   function boucle($arg1){
-      $content .= '<div class="col-xs-12">
-                <ul class="pagination"></ul>
-              </div>';
-              
     while($row = pg_fetch_row($arg1)){
       $content .= '<div class="row well well-lg article"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';

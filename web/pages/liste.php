@@ -53,10 +53,6 @@
   
 
     function boucle($arg1){
-    	  $content .= '<div class="col-xs-12">
-                <ul class="pagination"></ul>
-              </div>';
-              
     	$content = 	'<div class="row">
   				<form action="" method="post">
   					<select name="colSelect" id="colSelect">
