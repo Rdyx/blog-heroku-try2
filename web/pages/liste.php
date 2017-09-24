@@ -9,8 +9,8 @@
 
   <?php
 
-  include ("../layout/navbar_list.php");
-  include ('../bdd/linkbdd.php');
+  include('../layout/session.php');
+  include ('../layout/navbar.php');
 
   $colSelect = htmlspecialchars($_POST['colSelect']);
   $orderSelect = htmlspecialchars($_POST['orderSelect']);
