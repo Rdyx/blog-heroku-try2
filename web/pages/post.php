@@ -60,7 +60,7 @@
 									<option>11</option>
 									<option>12</option>
 								</select>
-								<p>/</p>
+								<span>/</span>
 								<select name="annee" id="annee">
 								'.$content .= boucle(date('Y'), -1).'
 								</select>
