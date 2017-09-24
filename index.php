@@ -50,7 +50,8 @@ $rowLog = pg_fetch_row($connect);
 
   function boucle($arg1){
 
-    $rowLog = pg_fetch_row($connect);
+  $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
+$rowLog = pg_fetch_row($connect);
     var_dump($rowLog[0]);
 
 
