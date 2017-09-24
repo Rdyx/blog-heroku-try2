@@ -8,7 +8,8 @@
 <body>
 
   <?php
-
+  
+  include ('web/bdd/linkbdd.php');
   include('web/layout/session.php');
   include ('web/layout/navbar.php');
 
