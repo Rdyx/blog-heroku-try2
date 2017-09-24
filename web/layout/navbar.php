@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['nickname'])) {
-  $_SESSION['nickname'] = 'Invité';
-};
-?>
 <nav class="navbar navbar-inverse navbar-fixed-top text-center">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav navbar-left">

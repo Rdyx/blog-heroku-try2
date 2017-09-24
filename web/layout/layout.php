@@ -1,11 +1,8 @@
 <?php
-// On démarre la session AVANT d'écrire du code HTML
 session_start();
-
-// On s'amuse à créer quelques variables de session dans $_SESSION
-$_SESSION['prenom'] = 'Jean';
-$_SESSION['nom'] = 'Dupont';
-$_SESSION['age'] = 24;
+if (!isset($_SESSION['nickname'])) {
+  $_SESSION['nickname'] = 'Invité';
+};
 ?>
 
 <div class="container text-center well well-sm" id="list-articles">

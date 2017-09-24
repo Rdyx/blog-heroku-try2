@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,14 +10,9 @@ session_start();
 
 		include ('../layout/navbar.php');
 		include ('../bdd/linkbdd.php');
-
-		$test = pg_query($dbconn, 'select * from admin');
-		$row = pg_fetch_row($test);
-		$pwd = strtoupper(hash('sha256', htmlspecialchars($_POST['pwd'])));
-		$nick = htmlspecialchars($_POST['pseudo']);
-
-
-		if(($nick == $row[0] || $nick == $row[3]) && $pwd == $row[1]){
+		include('../layout/session.php')
+		
+		if($_SESSION['nickname'] == $row[0]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
 				</div>
@@ -79,9 +70,10 @@ session_start();
 						</div>
 					</form>
 				</div>';
-				$_SESSION['nickname'] = $nick;
 		} else {
-			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
+			$content = '<div class="row"><h1>Erreur !</h1><br>
+			Vous n\'êtes pas connecté !<br>
+			<a href="login.php">Retour</a></div>';
 		};
 
 		function boucle($arg1, $arg2){
