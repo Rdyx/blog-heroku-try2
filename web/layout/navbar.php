@@ -1,9 +1,13 @@
+<?php
+session_start();
+?>
 <nav class="navbar navbar-inverse navbar-fixed-top text-center">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav navbar-left">
 			<li><a href="../../index.php">Accueil</a></li>
 			<li><a href="/web/pages/liste.php">Liste des articles</a></li>
 			<li><a href="/web/pages/login.php">Login</a></li>
+			<li>Bienvenue <?= $_SESSION['nick']; ?> !</li>
 		</ul>
 		<form action="../../index.php" method="post" class="navbar-form navbar-right">
 			<div class="form-group">

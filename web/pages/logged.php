@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['nickname'] = $nick;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,6 +20,7 @@
 		$row = pg_fetch_row($test);
 		$pwd = strtoupper(hash('sha256', htmlspecialchars($_POST['pwd'])));
 		$nick = htmlspecialchars($_POST['pseudo']);
+
 
 		if(($nick == $row[0] || $nick == $row[3]) && $pwd == $row[1]){
 			$content = '<div class="row">
@@ -74,8 +80,10 @@
 						</div>
 					</form>
 				</div>';
+				return $nick;
 		} else {
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
+			$nick = 'Invité';
 		};
 
 		function boucle($arg1, $arg2){
