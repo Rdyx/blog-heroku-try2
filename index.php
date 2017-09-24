@@ -16,9 +16,6 @@
   $order = 'ORDER BY art_oid DESC';
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
-  $connect = pg_query($dbconn, 'select * from admin');
-  $rowLog = pg_fetch_row($connect);
-
 
   $searchInput = htmlspecialchars($_POST['search']);
   
@@ -50,15 +47,15 @@
   };
 
   function boucle($arg1){
+    $connect = pg_query($dbconn, 'select * from admin');
+    $rowLog = pg_fetch_row($connect);
+
     while($row = pg_fetch_row($arg1)){
-      var_dump($_SESSION['nickname']);
-      var_dump($rowLog[0]);
       $content .= '<div class="row well well-lg article"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
       if($_SESSION['nickname'] == $rowLog[0]){
-        var_dump('lol');
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
                       <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
