@@ -23,7 +23,7 @@ $rowLog = pg_fetch_row($connect);
 
   if(!empty($searchInput)){
     $search = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
-    $content = boucle($search, $rowLog);
+    $content = boucle($search);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
       $content .= '<div class="row"><p>Il n\'existe aucun article contenant "<strong>'.$searchInput.'</strong>" !</p></div>';
