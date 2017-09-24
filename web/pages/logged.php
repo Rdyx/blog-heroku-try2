@@ -80,7 +80,6 @@ $_SESSION['nickname'] = $nick;
 						</div>
 					</form>
 				</div>';
-				return $nick;
 		} else {
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
 			$nick = 'Invité';
