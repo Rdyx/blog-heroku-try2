@@ -1,5 +1,5 @@
 new List('tableArticles', {
-  valueNames: ['article'],
+  valueNames: ['articlex'],
   page: 2,
   pagination: true
 });
