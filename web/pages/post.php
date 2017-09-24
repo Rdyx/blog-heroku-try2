@@ -34,7 +34,7 @@
 						</div>
 						<div class="row">
 						<ul class="list-inline">
-							<li>
+							<li class="well">
 								<p>Thème</p>
 								<select name="genre">
 									<option>Essence</option>
@@ -44,7 +44,7 @@
 									<option>Electrique</option>
 								</select>
 							</li>
-							<li>
+							<li class="well">
 								<p>Date de parution :</p> 
 								<select name="mois" id="mois">
 									<option>01</option>
