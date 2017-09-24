@@ -13,7 +13,6 @@ session_destroy();
 
   <?php
   header("refresh:5; url=../../index.php");
-  include('../layout/session.php');
   include ('../layout/navbar.php');
 
   $content = '<div class="row"><h1>Vous vous êtes déconnecté avec succès !</h1></br>
