@@ -54,11 +54,12 @@
                   <div class="col-xs-12 text-right"><p>Article écrit par '.$row[8].' le '.$row[7].'</p></div>
                   <ul class="list-inline">
                     <li>Date de parution de l\'ouvrage : <strong>'.$row[5].'/'.$row[6].'</strong></li>
+                    <li> - </li>
                     <li>Thème : <a href="?genre='.$row[4].'"><strong>'.$row[4].'</strong></a></li>
                     <li> - </li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                     <li> - </li>
-                    <li><a href="#" alt="Back-To-The-Top !">^^^</a></li>
+                    <li><a href="#" alt="Back-To-The-Top !"><img alt="^" src="http://www.cfecgc.org/content/img/fleche-haut.png"></a></li>
                   </ul>
                 </div>
                 </div>';
