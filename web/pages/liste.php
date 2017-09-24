@@ -66,7 +66,7 @@
   						<option>Ordre décroissant</option>
   					</select>
   					<button type="submit">Trier</button>
-            <a href="liste.php">Par défaut</a>
+            <a href="liste.php"><button>Par défaut</button></a>
   				</form>
   			</div>';
   			
