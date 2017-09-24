@@ -16,10 +16,11 @@
   $result = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $content = boucle($result);
-$rowLog = pg_fetch_row($connect);
-    var_dump($rowLog[0]);
+  $rowLog = pg_fetch_row($connect);
+  var_dump($rowLog[0]);
+
+
   $searchInput = htmlspecialchars($_POST['search']);
-  
 
   if(!empty($searchInput)){
     $search = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
@@ -47,7 +48,7 @@ $rowLog = pg_fetch_row($connect);
     $content = boucle($selectTheme, $rowLog);  
   };
 
-  function boucle($arg1, $arg2){
+  function boucle($arg1){
 
   var_dump($rowLog[0].' // '.$row[0]. ' // ');
   var_dump($arg2);
@@ -59,7 +60,14 @@ $rowLog = pg_fetch_row($connect);
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
-      
+      if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
+        $content .= '<div class="col-xs-12 text-right">
+                    <ul class="list-inline">
+                      <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
+                      <li><a href="web/pages/delete.php?id='.$row[0].'">Supprimer</a></li>
+                    </ul>
+                    </div>';
+      };
 
       $content.= '<div class="col-xs-12 text-right"><p>Article écrit par '.$row[8].' le '.$row[7].'</p></div>
                   <ul class="list-inline">
