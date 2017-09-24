@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['nickname'] = $nick;
 ?>
 
 <!DOCTYPE html>
@@ -80,10 +79,9 @@ $_SESSION['nickname'] = $nick;
 						</div>
 					</form>
 				</div>';
-				$nick = htmlspecialchars($_POST['pseudo']);
+				$_SESSION['nickname'] = $nick;
 		} else {
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
-			$nick = 'Invité';
 		};
 
 		function boucle($arg1, $arg2){

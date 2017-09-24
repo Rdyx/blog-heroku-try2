@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['nickname'] = 'Invité';
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top text-center">
 	<div class="container-fluid">
