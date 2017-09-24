@@ -27,10 +27,10 @@
 			header("refresh:5; url=../../index.php");
 			$content = '<div class="row"><h1>Success !</h1><br>
 						<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
-					<a href="../../index.php"><p>Retour à l\'accueil</p></a></div>';';
+					<a href="../../index.php"><p>Retour à l\'accueil</p></a></div>';
 		};
 		
-		include ('../layout/layout.php');
+		include ('../layout/layout_nolist.php');
 
 	?>
 

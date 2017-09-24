@@ -29,7 +29,7 @@
 		$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php"><p>Retour</p></a></div>';
 	};
 
-	include ('../layout/layout.php');
+	include ('../layout/layout_nolist.php');
 	?>
 
 </body>

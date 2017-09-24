@@ -31,7 +31,7 @@
 				</div>
 			</form>';
 
-	include ('../layout/layout.php');
+	include ('../layout/layout_nolist.php');
 
 	?>
 

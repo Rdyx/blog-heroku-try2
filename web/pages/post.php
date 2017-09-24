@@ -88,7 +88,7 @@
 		    return $content;
 		  }
 
-		include ('../layout/layout.php');
+		include ('../layout/layout_nolist.php');
 		?>
 
 </body>

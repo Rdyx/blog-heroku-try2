@@ -31,15 +31,6 @@
   };
 
 
-  $id = htmlspecialchars($_GET['id']);
-
-  if(!empty($id)){
-    $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
-    $content = boucle($selectId, $rowLog[0]);
-    // include ('web/layout/comments.php'); 
-  };
-
-
   $genre = htmlspecialchars($_GET['genre']);
 
   if(!empty($genre)){
@@ -68,7 +59,7 @@
                     <li> - </li>
                     <li>Thème : <a href="?genre='.$row[4].'"><strong>'.$row[4].'</strong></a></li>
                     <li> - </li>
-                    <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
+                    <li><a href="article.php?id='.$row[0].'">Voir les commentaires</a></li>
                     <li> - </li>
                     <li><a href="#" alt="Back-To-The-Top !"><img alt="^" src="http://www.dema-france.com/global/img/puces/fleche-haut.png"></a></li>
                   </ul>
