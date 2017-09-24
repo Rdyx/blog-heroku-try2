@@ -66,8 +66,6 @@
 								</select>
 							</li>
 						</ul>
-						</div>
-						<div class="row">
 						<br><input type="submit" value="Poster">
 						</div>
 					</form>
