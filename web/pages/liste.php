@@ -83,7 +83,13 @@
 
     while($row = pg_fetch_row($arg1)){
       $content .= '<tr class="articlex"><td>'.$row[1].'</td>';
-      $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
+
+      if(strlen($row[3]) > 70){
+        $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
+      } else {
+        $content .= '<td>'.$row[3].'</td>';
+      };
+      
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
       $content .= '<td>'.$row[7].'</td>';
