@@ -51,7 +51,7 @@
       $content .= '<div class="row well well-lg article"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">
-                  <div class="row" text-right">Ecrit par '.$row[8].' le '.$row[7].'</div>
+                  <div class="row text-right"><p>Article écrit par '.$row[8].' le '.$row[7].'</p></div>
                   <ul class="list-inline">
                     <li>Date de parution de l\'ouvrage : <strong>'.$row[5].'/'.$row[6].'</strong></li>
                     <li>Thème : <a href="?genre='.$row[4].'"><strong>'.$row[4].'</strong></a></li>
