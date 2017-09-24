@@ -53,12 +53,12 @@ $rowLog = pg_fetch_row($connect);
 
 
 
-    while($row = pg_fetch_row($arg1)){
+    while($row = pg_fetch_row($arg1, $arg2)){
       $content .= '<div class="row well well-lg article"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
-      if($_SESSION['nickname'] == $row[8]){
+      if($_SESSION['nickname'] == ($arg2 OR $row[8]){
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
                       <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
