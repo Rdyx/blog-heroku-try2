@@ -80,10 +80,10 @@ $_SESSION['nickname'] = $nick;
 						</div>
 					</form>
 				</div>';
-				return $nick = htmlspecialchars($_POST['pseudo']);
+				$nick = htmlspecialchars($_POST['pseudo']);
 		} else {
 			$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php">Retour</a></div>';
-			return $nick = 'Invité';
+			$nick = 'Invité';
 		};
 
 		function boucle($arg1, $arg2){
