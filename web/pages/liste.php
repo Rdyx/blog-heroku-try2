@@ -74,7 +74,7 @@
       $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
-      $content .= '<td>'.$row[6].'</td>';
+      $content .= '<td>'.$row[7].'</td>';
       $content .= '<td><a href="../../index.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
