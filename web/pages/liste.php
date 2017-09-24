@@ -12,10 +12,6 @@
   include ("../layout/navbar_list.php");
   include ('../bdd/linkbdd.php');
 
-  $content .= '<div class="col-xs-12">
-                <ul class="pagination"></ul>
-              </div>';
-              
   $colSelect = htmlspecialchars($_POST['colSelect']);
   $orderSelect = htmlspecialchars($_POST['orderSelect']);
   $order = "ORDER BY art_oid DESC";
@@ -57,6 +53,10 @@
   
 
     function boucle($arg1){
+    	  $content .= '<div class="col-xs-12">
+                <ul class="pagination"></ul>
+              </div>';
+              
     	$content = 	'<div class="row">
   				<form action="" method="post">
   					<select name="colSelect" id="colSelect">
