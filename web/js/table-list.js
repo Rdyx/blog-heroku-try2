@@ -1,4 +1,4 @@
-new List('table-articles', {
+new List('tableArticles', {
   valueNames: ['article'],
   page: 2,
   pagination: true
