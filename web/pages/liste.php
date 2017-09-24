@@ -54,35 +54,36 @@
 
     function boucle($arg1){
     	$content = 	'<div class="row">
-        <ul class="list-inline">
-          <li>
-  				<form action="" method="post">
-            <ul class="list-inline">
-            <li>
-  					<select name="colSelect" id="colSelect">
-  						<option>Titre</option>
-  						<option>Résumé</option>
-  						<option>Thème</option>
-  						<option>Date de parution</option>
-  					</select>
-            </li>
-            <li>
-  					<select name="orderSelect" id="orderSelect">
-  						<option>Ordre croissant</option>
-  						<option>Ordre décroissant</option>
-  					</select>
-            </li>
-            <li>
-  					<input type="submit" value="Trier">
-            </li>
-            </ul>
-  				</form>
-          </li>
-          <li>
-          <a href="liste.php"><button>Par défaut</button></a>
-          </li>
-          </ul>
-  			</div>';
+                    <ul class="list-inline">
+                      <li>
+            				    <form action="" method="post">
+                          <ul class="list-inline">
+                            <li>
+              					      <select name="colSelect" id="colSelect">
+                						    <option>Titre</option>
+                						    <option>Résumé</option>
+                						    <option>Thème</option>
+                						    <option>Date de parution</option>
+              					    </select>
+                            </li>
+                            <li>
+                    					<select name="orderSelect" id="orderSelect">
+                    						<option>Ordre croissant</option>
+                    						<option>Ordre décroissant</option>
+                    					</select>
+                            </li>
+                            <li></li>
+                            <li>
+                  					<input type="submit" value="Trier">
+                            </li>
+                          </ul>
+              				  </form>
+                      </li>
+                      <li>
+                        <a href="liste.php"><button>Par défaut</button></a>
+                      </li>
+                    </ul>
+  			          </div>';
   			
     	$content .= '<div class="row" id="tableArticles">
       <ul class="pagination"></ul>
