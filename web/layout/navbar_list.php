@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top text-center">
+<nav class="navbar navbar-inverse text-center">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav navbar-left">
 		<li><a href="../../index.php">Accueil</a></li>
