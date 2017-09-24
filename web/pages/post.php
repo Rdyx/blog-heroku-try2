@@ -83,15 +83,6 @@
 			</div>';
 		};
 
-if($_SESSION['nickname'] == $rowLog[0]){
-        $content .= '<div class="col-xs-12 text-right">
-                    <ul class="list-inline">
-                      <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
-                      <li><a href="web/pages/delete.php?id='.$row[0].'">Supprimer</a></li>
-                    </ul>
-                    </div>';
-      }
-      
 		function boucle($arg1, $arg2){
 		    for($i = $arg1; $i > $arg2; $i--){
 		      $content .= '<option>'.$i.'</option>';
