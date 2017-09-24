@@ -5,7 +5,7 @@
 			<li><a href="/web/pages/liste.php">Liste des articles</a></li>
 
 		<?php
-			if (!isset($_SESSION['nickname'])) { ?>
+			if ($_SESSION['nickname'] == 'Invité') { ?>
 			<li><a href="/web/pages/login.php">Login</a></li>
 		
 		<?php
