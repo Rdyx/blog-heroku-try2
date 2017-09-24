@@ -11,7 +11,6 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 		
-
 	$connect = pg_query($dbconn, "SELECT adm_name FROM admin");
     $rowLog = pg_fetch_row($connect);
 

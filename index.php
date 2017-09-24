@@ -15,6 +15,7 @@
 
   $order = 'ORDER BY art_oid DESC';
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
+  $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $content = boucle($result);
 
   $searchInput = htmlspecialchars($_POST['search']);
@@ -47,7 +48,7 @@
   };
 
   function boucle($arg1){
-    $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
+
     $rowLog = pg_fetch_row($connect);
 
 
