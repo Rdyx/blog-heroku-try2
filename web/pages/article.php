@@ -11,8 +11,7 @@
 
     include('../layout/session.php');
     include ('../layout/navbar.php');
-    include ('../bdd/linkbdd.php');
-  
+
     $id = htmlspecialchars($_GET['id']);
 
     if($id == ""){
