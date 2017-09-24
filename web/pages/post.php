@@ -14,7 +14,7 @@
 
 	$test = pg_query($dbconn, 'select * from admin');
 	$row = pg_fetch_row($test);
-	
+
 		if($_SESSION['nickname'] == $row[0]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
@@ -76,7 +76,11 @@
 		} else {
 			$content = '<div class="row"><h1>Erreur !</h1><br>
 			Vous n\'avez pas les autorisations nécessaires !<br>
-			<a href="login.php">Retour</a></div>';
+			<ul class="list-unstyled">
+				<li><a href="login.php">Se connecter</a></li>
+				<li><a href="../../index.php">Retour à l\'acceuil</a></li>
+			</ul>
+			</div>';
 		};
 
 		function boucle($arg1, $arg2){
