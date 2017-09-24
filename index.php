@@ -50,9 +50,7 @@ $rowLog = pg_fetch_row($connect);
 
   function boucle($arg1){
 
-  $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
-$rowLog = pg_fetch_row($connect);
-    var_dump($rowLog[0]);
+  var_dump($rowLog[0].' // ');
 
 
 
@@ -61,7 +59,7 @@ $rowLog = pg_fetch_row($connect);
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
-      if($_SESSION['nickname'] == $rowLog[0]){
+      if($_SESSION['nickname'] == $row[0]){
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
                       <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
