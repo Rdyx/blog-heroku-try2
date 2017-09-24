@@ -51,8 +51,9 @@
       $content .= '<div class="row text-justify"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-right">
                   <ul class="list-inline">
+                    <li>Posté le '.$row[7].'</li>
                     <li>Date de parution de l\'ouvrage : <strong>'.$row[5].'/'.$row[6].'</strong></li>
-                    <li><a href="?genre='.$row[4].'">Thème : <strong>'.$row[4].'</strong></a></li>
+                    <li>Thème : <a href="?genre='.$row[4].'"><strong>'.$row[4].'</strong></a></li>
                     <li> - </li>
                     <li><a href="?id='.$row[0].'">Voir les commentaires</a></li>
                     <li> - </li>

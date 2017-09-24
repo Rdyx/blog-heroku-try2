@@ -69,8 +69,8 @@
   				</form>
   			</div>';
   			
-    	$content .= '<div class="row">
-    				<table class="row table-striped table-bordered table-responsive" id="table-articles">
+    	$content .= '<div class="row" id="table-articles">
+    				<table class="row table-striped table-bordered table-responsive">
     					<tr>
     						<th class="text-center col-xs-3">Titre</th>
     						<th class="text-center col-xs-5">Résumé</th>
