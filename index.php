@@ -10,14 +10,13 @@
   <?php
 
   include ('web/bdd/linkbdd.php');
-  include('web/layout/session.php');
+  include ('web/layout/session.php');
   include ('web/layout/navbar.php');
 
   $result = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $rowLog = pg_fetch_row($connect);
   $content = boucle($result, $rowLog[0]);
-  var_dump($rowLog[0]);
 
 
   $searchInput = htmlspecialchars($_POST['search']);
@@ -54,7 +53,7 @@
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
-      if($_SESSION['nickname'] == $arg2){
+      if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
                       <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>

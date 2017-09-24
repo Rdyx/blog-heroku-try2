@@ -9,11 +9,12 @@
 
   <?php
 
-  include ("web/layout/navbar.php");
-  include ('web/bdd/linkbdd.php');
+  include ('../layout/session.php');
+  include ('../layout/navbar.php');
 
+  $content .= '<div class="row">'
 
-  include ('web/layout/layout.php');
+  include ('../layout/layout.php');
 
 ?>
 

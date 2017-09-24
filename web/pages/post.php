@@ -35,6 +35,7 @@
 						<div class="row">
 						<ul class="list-inline">
 							<li>
+								<p>Thème</p>
 								<select name="genre">
 									<option>Essence</option>
 									<option>Diesel</option>
@@ -43,8 +44,8 @@
 									<option>Electrique</option>
 								</select>
 							</li>
-							<li>Date de parution</li>
 							<li>
+								<p>Date de parution :</p> 
 								<select name="mois" id="mois">
 									<option>01</option>
 									<option>02</option>
@@ -59,8 +60,7 @@
 									<option>11</option>
 									<option>12</option>
 								</select>
-							</li>
-							<li>
+								<p>/</p>
 								<select name="annee" id="annee">
 								'.$content .= boucle(date('Y'), -1).'
 								</select>
