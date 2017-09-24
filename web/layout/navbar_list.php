@@ -7,7 +7,7 @@
 		</ul>
 		<form action="liste.php" method="post" class="navbar-form navbar-right">
 			<div class="form-group">
-				<input type="text" class="form-control" name="search" id="search" placeholder="Rechercher dans les articles...">
+				<input type="text" class="form-control" name="search" id="search" placeholder="Rechercher un titre dans la liste..." size="75">
 			</div>
 			<button type="submit" class="btn btn-default">Rechercher</button>
 		</form>

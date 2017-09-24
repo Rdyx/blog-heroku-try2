@@ -1,5 +1,5 @@
 new List('list-articles', {
   valueNames: ['article'],
-  page: 2,
+  page: 5,
   pagination: true
 });
