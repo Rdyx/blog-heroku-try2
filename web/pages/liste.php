@@ -67,7 +67,7 @@
   					</select>
   					<button type="submit">Trier</button>
   				</form>
-          <a href="liste.php"><button>Par défaut</button></a>
+          <for action=""><button>Par défaut</button></form>
   			</div>';
   			
     	$content .= '<div class="row" id="tableArticles">
