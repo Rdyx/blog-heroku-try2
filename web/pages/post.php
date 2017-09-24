@@ -72,7 +72,7 @@
 				</div>';
 		} else {
 			$content = '<div class="row"><h1>Erreur !</h1><br>
-			Vous n\'êtes pas connecté !<br>
+			Vous n\'avez pas les autorisations nécessaires !<br>
 			<a href="login.php">Retour</a></div>';
 		};
 
