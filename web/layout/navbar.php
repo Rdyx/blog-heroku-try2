@@ -4,20 +4,20 @@
 			<li><a href="../../index.php">Accueil</a></li>
 			<li><a href="/web/pages/liste.php">Liste des articles</a></li>
 
-		<?php
-			if ($_SESSION['nickname'] == 'Invité') { ?>
-			<li><a href="/web/pages/login.php">Login</a></li>
-		
-		<?php
-			} else { 
-		?>
-			<li><a href="/web/pages/post.php">Ecrire un article</a></li>
-			<li><a href="/web/pages/disconnect.php">Se déconnecter</a></li>
-		
-		<?php
-			};
-		?>
-	</ul>
+			<?php
+				if ($_SESSION['nickname'] == 'Invité') { ?>
+				<li><a href="/web/pages/login.php">Login</a></li>
+			
+			<?php
+				} else { 
+			?>
+				<li><a href="/web/pages/post.php">Ecrire un article</a></li>
+				<li><a href="/web/pages/disconnect.php">Se déconnecter</a></li>
+			
+			<?php
+				};
+			?>
+		</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a>Bienvenue <?= $_SESSION['nickname']; ?> !</a></li>
 		<li>
