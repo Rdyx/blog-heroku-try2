@@ -47,7 +47,7 @@
   };
 
   function boucle($arg1){
-    $connect = pg_query($dbconn, 'select * from admin');
+    $connect = pg_query($dbconn, 'SELECT * FROM admin');
     $rowLog = pg_fetch_row($connect);
 
 
