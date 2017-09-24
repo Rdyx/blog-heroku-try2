@@ -48,9 +48,9 @@
     $content = boucle($selectTheme, 2);  
   };
 
-  function boucle($arg1, $arg2){
+  function boucle($arg1, $argumet2){
 
-  var_dump($arg2);
+  var_dump($argumet2);
 
 
 
