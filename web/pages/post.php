@@ -6,14 +6,14 @@
 	<title>Post Article</title>
 </head>
 <body>
-		<?php 
+	<?php 
 
-		include('../layout/session.php');
-		include ('../layout/navbar.php');
+	include('../layout/session.php');
+	include ('../layout/navbar.php');
 		
 
-	$connect = pg_query($dbconn, 'select * from admin');
-	$rowLog = pg_fetch_row($connect);
+	$connect = pg_query($dbconn, "SELECT adm_name FROM admin");
+    $rowLog = pg_fetch_row($connect);
 
 		if($_SESSION['nickname'] == $rowLog[0]){
 			$content = '<div class="row">
