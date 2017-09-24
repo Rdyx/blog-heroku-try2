@@ -13,8 +13,7 @@
   include('web/layout/session.php');
   include ('web/layout/navbar.php');
 
-  $order = 'ORDER BY art_oid DESC';
-  $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
+  $result = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $content = boucle($result);
 $rowLog = pg_fetch_row($connect);
@@ -50,7 +49,7 @@ $rowLog = pg_fetch_row($connect);
 
   function boucle($arg1){
 
-  var_dump($rowLog[0].' // ');
+  var_dump($rowLog[0].' // '.$row[0]. ' // ');
 
 
 
