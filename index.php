@@ -51,6 +51,7 @@
     $rowLog = pg_fetch_row($connect);
 
     while($row = pg_fetch_row($arg1)){
+      var_dump($rowLog[0]);
       $content .= '<div class="row well well-lg article"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
