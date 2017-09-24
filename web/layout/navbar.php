@@ -7,7 +7,7 @@ session_start();
 			<li><a href="../../index.php">Accueil</a></li>
 			<li><a href="/web/pages/liste.php">Liste des articles</a></li>
 			<li><a href="/web/pages/login.php">Login</a></li>
-			<li>Bienvenue <?= $_SESSION['nick']; ?> !</li>
+			<li>Bienvenue <?= $_SESSION['nickname']; ?> !</li>
 		</ul>
 		<form action="../../index.php" method="post" class="navbar-form navbar-right">
 			<div class="form-group">
