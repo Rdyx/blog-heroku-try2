@@ -10,7 +10,7 @@
 
 		include ('../layout/navbar.php');
 		include ('../bdd/linkbdd.php');
-		include('../layout/session.php')
+		include('../layout/session.php');
 		
 		if($_SESSION['nickname'] == $row[0]){
 			$content = '<div class="row">
