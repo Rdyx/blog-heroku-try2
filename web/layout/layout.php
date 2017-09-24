@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['nickname'])) {
-  $_SESSION['nickname'] = 'Invité';
-};
-?>
-
 <div class="container text-center well well-sm" id="list-articles">
 	<div class="col-xs-12">
 		<ul class="pagination"></ul>
