@@ -40,7 +40,8 @@
 
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
-
+  $searchInput = htmlspecialchars($_POST['search']);
+  
   if(!empty($searchInput)){
     $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   	$content = boucle($result);
