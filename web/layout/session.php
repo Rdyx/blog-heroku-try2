@@ -6,5 +6,5 @@ if (!isset($_SESSION['nickname'])) {
 };
 
 	include ('../bdd/linkbdd.php');
-	
+
 ?>

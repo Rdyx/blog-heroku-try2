@@ -11,6 +11,10 @@
 		include('../layout/session.php');
 		include ('../layout/navbar.php');
 		
+
+	$test = pg_query($dbconn, 'select * from admin');
+	$row = pg_fetch_row($test);
+	
 		if($_SESSION['nickname'] == $row[0]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
