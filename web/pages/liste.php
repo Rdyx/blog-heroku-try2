@@ -87,7 +87,7 @@
   			
     	$content .= '<div class="row" id="tableArticles">
       <ul class="pagination"></ul>
-    				<table class="row table-striped table-bordered table-responsive">
+    				<table class="row table-striped  table-responsive">
     					<tr>
     						<th class="text-center col-xs-3">Titre</th>
     						<th class="text-center col-xs-5">Résumé</th>
