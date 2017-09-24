@@ -58,7 +58,7 @@ $rowLog = pg_fetch_row($connect);
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
-      if($_SESSION['nickname'] == $rowLog[0]){
+      if($_SESSION['nickname'] == $arg2[0]){
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
                       <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
