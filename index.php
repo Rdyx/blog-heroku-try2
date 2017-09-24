@@ -12,6 +12,10 @@
   include ("web/layout/navbar.php");
   include ('web/bdd/linkbdd.php');
 
+  $content .= '<div class="col-xs-12">
+                <ul class="pagination"></ul>
+              </div>';
+              
   $order = 'ORDER BY art_oid DESC';
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
