@@ -23,7 +23,7 @@ $rowLog = pg_fetch_row($connect);
 
   if(!empty($searchInput)){
     $search = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
-    $content = boucle($search, $rowLog[0]);
+    $content = boucle($search, $rowLog);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
       $content .= '<div class="row"><p>Il n\'existe aucun article contenant "<strong>'.$searchInput.'</strong>" !</p></div>';
@@ -35,7 +35,7 @@ $rowLog = pg_fetch_row($connect);
 
   if(!empty($id)){
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
-    $content = boucle($selectId, $rowLog[0]);
+    $content = boucle($selectId, $rowLog);
     // include ('web/layout/comments.php'); 
   };
 
@@ -44,7 +44,7 @@ $rowLog = pg_fetch_row($connect);
 
   if(!empty($genre)){
     $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."' ".$order);
-    $content = boucle($selectTheme, $rowLog[0]);  
+    $content = boucle($selectTheme, $rowLog);  
   };
 
   function boucle($arg1, $arg2){
@@ -58,7 +58,7 @@ $rowLog = pg_fetch_row($connect);
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
-      if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
+      if($_SESSION['nickname'] == $arg2[0] || $_SESSION['nickname'] == $row[8]){
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
                       <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
