@@ -11,6 +11,7 @@
 
 		include ('../layout/navbar.php');
 		include ('../bdd/linkbdd.php');
+		include('../layout/session.php');
 
 		$artTitle = htmlspecialchars($_POST['titre']);
 		$artContent = htmlspecialchars($_POST['contenu']);
