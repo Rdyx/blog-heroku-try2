@@ -67,6 +67,7 @@
   					</select>
   					<button type="submit">Trier</button>
   				</form>
+          <a href="liste.php"><button>Par défaut</button></a>
   			</div>';
   			
     	$content .= '<div class="row" id="tableArticles">
@@ -89,7 +90,7 @@
       } else {
         $content .= '<td>'.$row[3].'</td>';
       };
-      
+
       $content .= '<td>'.$row[4].'</td>';
       $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
       $content .= '<td>'.$row[7].'</td>';
