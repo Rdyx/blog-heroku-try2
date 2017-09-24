@@ -9,7 +9,7 @@
 
   <?php
 
-  include ("../layout/navbar.php");
+  include ("../layout/navbar_list.php");
   include ('../bdd/linkbdd.php');
 
   $colSelect = htmlspecialchars($_POST['colSelect']);
@@ -38,8 +38,15 @@
   	  }
   }
 
-  $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
+  if(!empty($searchInput)){
+    $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
+    if(empty($content)){
+      $content = '<div class="row"><h1>Désolé !</h1><div>';
+      $content .= '<div class="row"><p>Il n\'existe aucun article contenant "<strong>'.$searchInput.'</strong>" !</p></div>';
+    };
+  };
+  
 
     function boucle($arg1){
     	$content = 	'<div class="row">
@@ -65,7 +72,7 @@
     						<th class="text-center col-xs-5">Résumé</th>
     						<th class="text-center col-xs-1">Thème</th>
     						<th class="text-center col-xs-1">Date de parution</th>
-    						<th class="text-center col-xs-2">Date de l\article</th>
+    						<th class="text-center col-xs-2">Date de l\'article</th>
     					</tr>
     					<tbody class="list">';
 
