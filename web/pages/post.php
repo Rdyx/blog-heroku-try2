@@ -17,10 +17,9 @@
 		if($_SESSION['nickname'] == $rowLog[0]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
-				</div>
 				<div class="row">
 					<form action="posted.php" method="post">
-						<div class="row ">
+						<div class="row">
 						<label for="titre">Titre</label>
 						</div>
 						<div class="row">
@@ -71,6 +70,7 @@
 						<br><input type="submit" value="Poster">
 						</div>
 					</form>
+				</div>
 				</div>';
 		} else {
 			$content = '<div class="row"><h1>Erreur !</h1><br>
