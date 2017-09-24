@@ -41,9 +41,9 @@
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result);
   $searchInput = htmlspecialchars($_POST['search']);
-  
+
   if(!empty($searchInput)){
-    $result = pg_query($dbconn, "SELECT * FROM articles WHERE art_title LIKE '%".$searchInput."%' ".$order);
+    $result = pg_query($dbconn, "SELECT * FROM articles WHERE ".strtolower(."art_title".)." LIKE '%".strtolower($searchInput)."%' ".$order);
   	$content = boucle($result);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
