@@ -92,7 +92,10 @@
 
     $content .= '</tbody>
     			</table>
-    			</div>';
+    			</div>
+          <div class="row">
+            <a href="#" alt="Back-To-The-Top !"><img alt="^" src="http://www.dema-france.com/global/img/puces/fleche-haut.png"></a>
+          </div>';
 
     return $content;
   }
