@@ -69,7 +69,8 @@
   				</form>
   			</div>';
   			
-    	$content .= '<div class="row" id="table-articles">
+    	$content .= '<div class="row" id="tableArticles">
+      <ul class="pagination"></ul>
     				<table class="row table-striped table-bordered table-responsive">
     					<tr>
     						<th class="text-center col-xs-3">Titre</th>
@@ -105,6 +106,6 @@
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-<script src="../js/app.js"></script>
+<script src="../js/table-list.js"></script>
 </body>
 </html>

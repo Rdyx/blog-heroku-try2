@@ -1,5 +1,5 @@
-new List('table-articles', {
+new List('tableArticles', {
   valueNames: ['articlex'],
-  page: 2,
+  page: 10,
   pagination: true
 });
