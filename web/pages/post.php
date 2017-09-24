@@ -15,7 +15,7 @@
 	$connect = pg_query($dbconn, 'select * from admin');
 	$rowLog = pg_fetch_row($connect);
 
-		if($_SESSION['nickname'] == $row[0]){
+		if($_SESSION['nickname'] == $rowLog[0]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
 				</div>
