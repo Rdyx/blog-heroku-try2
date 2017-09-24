@@ -9,9 +9,9 @@
 
   <?php
 
+  include('web/layout/session.php');
   include ('web/layout/navbar.php');
   include ('web/bdd/linkbdd.php');
-  include('web/layout/session.php');
 
   $order = 'ORDER BY art_oid DESC';
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);

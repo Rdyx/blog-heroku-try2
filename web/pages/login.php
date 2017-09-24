@@ -7,8 +7,8 @@
 </head>
 <body>
 	<?php 
-	include ('../layout/navbar.php');
 	include('../layout/session.php');
+	include ('../layout/navbar.php');
 
 	$content = '<div class="row"><h1>Login Admin</h1></div>
 			<form action="logged.php" method="post">

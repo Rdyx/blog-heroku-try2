@@ -9,10 +9,10 @@
 
     <?php
 
+    include('../layout/session.php');
     include ('../layout/navbar.php');
     include ('../bdd/linkbdd.php');
-    include('../layout/session.php');
-
+  
     $id = htmlspecialchars($_GET['id']);
 
     if($id == ""){

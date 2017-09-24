@@ -8,9 +8,9 @@
 <body>
 		<?php 
 
+		include('../layout/session.php');
 		include ('../layout/navbar.php');
 		include ('../bdd/linkbdd.php');
-		include('../layout/session.php');
 
 		$test = pg_query($dbconn, 'select * from admin');
 		$row = pg_fetch_row($test);
