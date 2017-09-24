@@ -66,8 +66,8 @@
   						<option>Ordre décroissant</option>
   					</select>
   					<button type="submit">Trier</button>
+            <a href="liste.php"><button>Par défaut</button></a>
   				</form>
-          <a href="liste.php"><button value="Par défaut"></button></a>
   			</div>';
   			
     	$content .= '<div class="row" id="tableArticles">
