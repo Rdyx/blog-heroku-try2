@@ -17,11 +17,13 @@
 		$artGenre = htmlspecialchars($_POST['genre']);
 		$artMois = htmlspecialchars($_POST['mois']);
 		$artAnnee = htmlspecialchars($_POST['annee']);
-		
+		date_default_timezone_set('Europe/Paris');
+
+
 		if(empty($artTitle) || empty($artContent) || strlen($artTitle) > 50 || strlen($artContent) > 1000 || $artMois <= 0 || $artMois > 12 || empty($artMois) || $artAnnee <= -10001 || $artAnnee > date('Y') || empty($artAnnee)){
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="login.php">Retour</a></div>';
 		} else {
-			pg_query($dbconn, "INSERT INTO articles (art_title, art_content, art_genre, art_month, art_year, art_date) VALUES ('".$artTitle."', '".$artContent."', '".$artGenre."', '".$artMois."', '".$artAnnee."', '".date('Y-m-d H:i')."')");
+			pg_query($dbconn, "INSERT INTO articles (art_title, art_content, art_genre, art_month, art_year, art_date) VALUES ('".$artTitle."', '".$artContent."', '".$artGenre."', '".$artMois."', '".$artAnnee."', '".date('Y-m-d à H:i')."')");
 			$content = '<div class="row"><h1>Success !</h1> <br> <a href="../../index.php">Retour à l\'index</a></div>';
 		};
 		

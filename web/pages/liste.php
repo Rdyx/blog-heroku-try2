@@ -64,8 +64,8 @@
     						<th class="text-center col-xs-3">Titre</th>
     						<th class="text-center col-xs-5">Résumé</th>
     						<th class="text-center col-xs-1">Thème</th>
-    						<th class="text-center col-xs-2">Date de parution</th>
-    						<th class="text-center col-xs-1">Date de l\article</th>
+    						<th class="text-center col-xs-1">Date de parution</th>
+    						<th class="text-center col-xs-2">Date de l\article</th>
     					</tr>
     					<tbody class="list">';
 
