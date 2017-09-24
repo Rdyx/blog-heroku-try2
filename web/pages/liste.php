@@ -59,13 +59,13 @@
   			</div>';
   			
     	$content .= '<div class="row">
-    				<table class="table-striped table-bordered table-responsive" id="table-articles">
-    					<tr class="text-center">
-    						<th>Titre</th>
-    						<th>Résumé</th>
-    						<th>Thème</th>
-    						<th>Date de parution</th>
-    						<th>Date de l\article</th>
+    				<table class="row table-striped table-bordered table-responsive" id="table-articles">
+    					<tr>
+    						<th class="text-center">Titre</th>
+    						<th class="text-center">Résumé</th>
+    						<th class="text-center">Thème</th>
+    						<th class="text-center">Date de parution</th>
+    						<th class="text-center">Date de l\article</th>
     					</tr>
     					<tbody class="list">';
 
