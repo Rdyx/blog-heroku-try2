@@ -19,8 +19,6 @@
 
 	if(($nick == $row[0] || $nick == $row[3]) && $pwd == $row[1]){
 		header("refresh:5; url=../../index.php");
-		include('../layout/session.php');
-		include ('../layout/navbar.php');
 
 		$content = '<div class="row"><h1>Vous vous êtes connecté avec succès !</h1></br>
 					<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
