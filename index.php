@@ -15,8 +15,8 @@
 
   $result = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
-  $content = boucle($result);
   $rowLog = pg_fetch_row($connect);
+  $content = boucle($result, 2);
   var_dump($rowLog[0]);
 
 
