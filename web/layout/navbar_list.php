@@ -5,7 +5,7 @@
 			<li><a href="/web/pages/liste.php">Liste des articles</a></li>
 			<li><a href="/web/pages/login.php">Login</a></li>
 		</ul>
-		<form action="../../index.php" method="post" class="navbar-form navbar-right">
+		<form action="liste.php" method="post" class="navbar-form navbar-right">
 			<div class="form-group">
 				<input type="text" class="form-control" name="search" id="search" placeholder="Rechercher dans les articles...">
 			</div>
