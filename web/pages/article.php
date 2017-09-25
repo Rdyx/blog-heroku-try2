@@ -12,17 +12,12 @@
     include('../layout/session.php');
     include ('../layout/navbar.php');
 
-  $result = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC");
-  $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
-  $rowLog = pg_fetch_row($connect);
-  $content = boucle($result, $rowLog[0]);
-  $id = htmlspecialchars($_GET['id']);
-
-  if(!empty($id)){
+    $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
+    $rowLog = pg_fetch_row($connect);
+    $id = htmlspecialchars($_GET['id']);
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
     $content = boucle($selectId, $rowLog[0]);
     // include ('web/layout/comments.php'); 
-  };
 
       function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
