@@ -18,7 +18,7 @@
 	$row = pg_fetch_row($result);
 	var_dump($row[3]);
 
-		if($_SESSION['nickname'] == $row[8]){
+		if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
 				</div>
@@ -34,7 +34,7 @@
 						<label for="contenu">Votre texte</label>
 						</div>
 						<div class="row">
-						<textarea name="contenu" id="contenu" cols="75" rows="10" placeholder="Votre texte..." maxlength="1000" value="'.$row[3].'" required></textarea>
+						<textarea name="contenu" id="contenu" cols="75" rows="10" maxlength="1000" value="'.$row[3].'" placeholder="Votre texte..." required></textarea>
 						</div>
 						<div class="row">
 						<ul class="list-inline">
