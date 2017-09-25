@@ -26,7 +26,7 @@
 			pg_query($dbconn, "UPDATE articles 
 								SET art_title = 'Topkek' 
 								WHERE 
-								art_oid = '".$id."'");
+								art_oid = ".$id);
 
 			header("refresh:5; url=../../index.php");
 			$content = '<div class="row"><h1>Success !</h1><br>
