@@ -7,12 +7,10 @@
   </div>
   <div class="row list">';
 
-  $content .= boucleCom($comsResult, $rowLog[0]);
-  $id = htmlspecialchars($_GET['id']);
-  var_dump($id);
+  $content .= boucleCom($comsResult, $rowLog[0], $id);
 
 
-  function boucleCom($arg1, $arg2){
+  function boucleCom($arg1, $arg2, $arg3){
   	while($row = pg_fetch_row($arg1)){
   		$content .= '<div class="col-xs-offset-1 col-xs-10 well well-lg comment"><p>'.$row[0].'</p></div>';
 
@@ -27,10 +25,10 @@
       //               </div>';
       // };
   	}
-  	var_dump($id);
+  	var_dump($arg3);
       $content.= '</div>
-      			<div class="col-xs-offset-1 col-xs-10 well text-right"><p><strong>Ecrire un commentaire</strong></p>
-			      <form action="postedComment.php?id="'.$id.'" method="post">
+      			<div class="col-xs-offset-1 col-xs-10 text-right"><p><strong>Ecrire un commentaire</strong></p>
+			      <form action="postedComment.php?id="'.$arg3.'" method="post">
 			      	<ul class="list-unstyled">
 			      		<li><textarea name="commentContent" id="contenu" cols="65" rows="3" placeholder="Votre texte..." maxlength="250" required></textarea></li>
 			      		<li><input type="submit" value="Poster"></li>
