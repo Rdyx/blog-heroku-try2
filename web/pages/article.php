@@ -17,7 +17,6 @@
     $id = htmlspecialchars($_GET['id']);
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
     $content = boucle($selectId, $rowLog[0]);
-    include ('../layout/comments.php'); 
 
       function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
@@ -50,6 +49,7 @@
     return $content;
   }
     include ('../layout/layout_nolist.php');
+    include ('../layout/comments.php'); 
 
     ?>
 
