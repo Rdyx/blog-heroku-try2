@@ -15,12 +15,12 @@
   $comsResult = pg_query($dbconn, "SELECT * FROM comments ORDER BY com_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $rowLog = pg_fetch_row($connect);
-  $content .= boucle($comsResult, $rowLog[0]);
+  $content .= boucleCom($comsResult, $rowLog[0]);
 
 
   $content .= '<div class="row"><h3>Commentaires</h3>';
 
-  function boucle($arg1, $arg2){
+  function boucleCom($arg1, $arg2){
   	while($row = pg_fetch_row($arg1)){
   		$content .= '<div class="col-xs-offset-2 col-xs-10 well well-lg article"><div class="row"><p>'.$row[1].'</p></div>';
 

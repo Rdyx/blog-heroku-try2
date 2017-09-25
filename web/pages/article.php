@@ -48,8 +48,9 @@
     }
     return $content;
   }
-    include ('../layout/layout_nolist.php');
+  
     include ('../layout/comments.php'); 
+    include ('../layout/layout_nolist.php');
 
     ?>
 
