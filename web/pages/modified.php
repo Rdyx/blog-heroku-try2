@@ -24,8 +24,8 @@
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="post.php">Retour</a></div>';
 		} else {
 			pg_query($dbconn, "UPDATE articles
-								SET art_title = 'Topkek' 
-								WHERE art_oid = '".$id."'");
+								SET art_title = 'Topkeklol' 
+								WHERE art_oid = 52");
 
 			header("refresh:5; url=../../index.php");
 			$content = '<div class="row"><h1>Success !</h1><br>
