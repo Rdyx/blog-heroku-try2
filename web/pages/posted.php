@@ -12,11 +12,11 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-		$artTitle = htmlspecialchars($_POST['titre']);
-		$artContent = htmlspecialchars($_POST['contenu']);
-		$artGenre = htmlspecialchars($_POST['genre']);
-		$artMois = htmlspecialchars($_POST['mois']);
-		$artAnnee = htmlspecialchars($_POST['annee']);
+		$artTitle = htmlentities($_POST['titre']);
+		$artContent = htmlentities($_POST['contenu']);
+		$artGenre = htmlentities($_POST['genre']);
+		$artMois = htmlentities($_POST['mois']);
+		$artAnnee = htmlentities($_POST['annee']);
 		date_default_timezone_set('Europe/Paris');
 
 
