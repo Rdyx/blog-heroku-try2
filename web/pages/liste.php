@@ -98,7 +98,7 @@
     					<tbody class="list">';
 
     while($row = pg_fetch_row($arg1)){
-      $content .= '<tr class="articlex col-xs-2"><td>'.$row[1].'</td>';
+      $content .= '<tr class="articlex"><td class="col-xs-2">'.$row[1].'</td>';
 
       if(strlen($row[3]) > 70){
         $content .= '<td class="col-xs-4">'.substr($row[3], 0, 70).'...</td>';
