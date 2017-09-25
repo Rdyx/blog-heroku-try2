@@ -28,7 +28,7 @@
   	var_dump($arg3);
       $content.= '</div>
       			<div class="col-xs-offset-1 col-xs-10 text-right"><p><strong>Ecrire un commentaire</strong></p>
-			      <form action="postedComment.php?id="'.$arg3.'" method="post">
+			      <form action="postedComment.php?id='.$arg3.' method="post">
 			      	<ul class="list-unstyled">
 			      		<li><textarea name="commentContent" id="contenu" cols="65" rows="3" placeholder="Votre texte..." maxlength="250"></textarea></li>
 			      		<li><input type="submit" value="Poster"></li>
