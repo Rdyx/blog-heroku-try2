@@ -5,8 +5,10 @@
   var_dump($id);
 
   function boucleCom($arg1, $arg2){
-  	$content .= '<div class="row" id="listComs"><h3>Commentaires</h3><br>
-  				<ul class="pagination"></ul>'
+  	$content .= '<div class="row" id="listComs"><h3>Commentaires</h3>
+  				<div class="col-xs-12">
+					<ul class="pagination"></ul>
+				</div>'
   	$content .= '<div class="row list">';
   	while($row = pg_fetch_row($arg1)){
   		$content .= '<div class="col-xs-offset-1 col-xs-10 well well-lg comment"><p>'.$row[0].'</p></div>';
