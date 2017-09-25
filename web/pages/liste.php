@@ -10,7 +10,7 @@
   <?php
 
   include('../layout/session.php');
-  include ('../layout/navbar.php');
+  include ('../layout/navbar_list.php');
 
   $colSelect = htmlspecialchars($_POST['colSelect']);
   $orderSelect = htmlspecialchars($_POST['orderSelect']);
