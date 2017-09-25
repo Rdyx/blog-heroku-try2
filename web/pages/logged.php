@@ -11,7 +11,7 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-	$test = pg_query($dbconn, 'select * from admin');
+	$test = pg_query($dbconn, 'SELECT * FROM admin');
 	$row = pg_fetch_row($test);
 	$pwd = strtoupper(hash('sha256', htmlspecialchars($_POST['pwd'])));
 	$nick = htmlspecialchars($_POST['pseudo']);
@@ -24,7 +24,7 @@
 					<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
 					<a href="../../index.php"><p>Retour à l\'accueil</p></a></div>';
 
-		$_SESSION['nickname'] = $nick;
+		$_SESSION['nickname'] = $row[0];
 	} else {
 		$content = '<div class="row"><h1>Mauvais identifiant(s) !</h1><br> <a href="login.php"><p>Retour</p></a></div>';
 	};
