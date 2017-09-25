@@ -24,7 +24,8 @@
                     </div>';
       };
   	}
-      $content.= '<div class="col-xs-offset-1 col-xs-10 well text-justify"><p><strong>Ecrire un commentaire</strong></p>
+      $content.= '</div>
+      			<div class="col-xs-offset-1 col-xs-10 well text-justify"><p><strong>Ecrire un commentaire</strong></p>
 			      <form action="postedComment.php?id="'.$id.'" method="post">
 			      	<ul class="list-unstyled">
 			      		<li><textarea name="commentContent" id="contenu" cols="65" rows="3" placeholder="Votre texte..." maxlength="250" required></textarea></li>
