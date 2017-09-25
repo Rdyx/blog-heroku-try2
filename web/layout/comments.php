@@ -2,10 +2,8 @@
   $comsResult = pg_query($dbconn, "SELECT * FROM comments ORDER BY com_oid DESC");
   $content .= boucleCom($comsResult, $rowLog[0]);
 
-
-  $content .= '<div class="row"><h3>Commentaires</h3>';
-
   function boucleCom($arg1, $arg2){
+  	$content .= '<div class="row"><h3>Commentaires</h3>';
   	while($row = pg_fetch_row($arg1)){
   		$content .= '<div class="col-xs-offset-2 col-xs-10 well well-lg article"><div class="row"><p>'.$row[1].'</p></div>';
 
