@@ -10,7 +10,8 @@
 
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
-		
+	
+	$id = $_GET['id'];
 	$connect = pg_query($dbconn, "SELECT adm_name FROM admin");
     $rowLog = pg_fetch_row($connect);
     $result = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
