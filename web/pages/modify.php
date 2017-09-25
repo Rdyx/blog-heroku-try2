@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <head>
 	<meta charset="UTF-8">
-	<title>Post Article</title>
+	<title>Edit Article</title>
 </head>
 <body>
 	<?php 
@@ -16,11 +16,11 @@
     $rowLog = pg_fetch_row($connect);
     $result = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
 	$row = pg_fetch_row($result);
-	var_dump($row[3]);
 
 		if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
 			$content = '<div class="row">
-			<h1>Post an article</h1>
+			<h1>Edit an article</h1><br>
+			<p>Pensez à bien remettre le thème ainsi que la date de parution !</p>
 				</div>
 				<div class="row">
 					<form action="modified.php" method="post">
