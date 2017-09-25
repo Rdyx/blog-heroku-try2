@@ -98,18 +98,18 @@
     					<tbody class="list">';
 
     while($row = pg_fetch_row($arg1)){
-      $content .= '<tr class="articlex"><td class="col-xs-2">'.$row[1].'</td>';
+      $content .= '<tr class="articlex"><td class="col-xs-3">'.$row[1].'</td>';
 
       if(strlen($row[3]) > 70){
-        $content .= '<td class="col-xs-4">'.substr($row[3], 0, 70).'...</td>';
+        $content .= '<td class="col-xs-5">'.substr($row[3], 0, 70).'...</td>';
       } else {
-        $content .= '<td class="col-xs-4">'.$row[3].'</td>';
+        $content .= '<td class="col-xs-5">'.$row[3].'</td>';
       };
 
       $content .= '<td class="col-xs-1">'.$row[4].'</td>';
       $content .= '<td class="col-xs-1">'.$row[5].'/'.$row[6].'</td>';
-      $content .= '<td class="col-xs-2">'.$row[7].'</td>';
-      $content .= '<td class="col-xs-2"><a href="article.php?id='.$row[0].'">En savoir plus</a></td></tr>';
+      $content .= '<td class="col-xs-1">'.$row[7].'</td>';
+      $content .= '<td class="col-xs-1"><a href="article.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
     $content .= '</tbody>
