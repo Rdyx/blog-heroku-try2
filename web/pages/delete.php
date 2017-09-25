@@ -18,7 +18,7 @@
 	$row = pg_fetch_row($result);
 
 	if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
-		pg_query($dbconn, "DELETE FROM articles WHERE art_oid = '".$id."'");
+		pg_query($dbconn, "DELETE FROM articles WHERE art_oid = ".$id);
 
 		header("refresh:5; url=../../index.php");
 		$content .= '<div class="row"><h1>Article supprimé !</h1></br>
