@@ -14,6 +14,8 @@
 
   $colSelect = htmlspecialchars($_POST['colSelect']);
   $orderSelect = htmlspecialchars($_POST['orderSelect']);
+  $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
+  $rowLog = pg_fetch_row($connect);
   $order = "ORDER BY art_oid DESC";
 
   if($orderSelect == "Ordre croissant"){
@@ -39,12 +41,12 @@
   }
 
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
-  $content = boucle($result);
+  $content = boucle($result, $rowLog[0]);
   $searchInput = htmlspecialchars($_POST['search']);
 
   if(!empty($searchInput)){
     $result = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
-  	$content = boucle($result);
+  	$content = boucle($result, $rowLog[0]);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
       $content .= '<div class="row"><p>Il n\'existe aucun article contenant "<strong>'.$searchInput.'</strong>" !</p></div>';
@@ -52,7 +54,7 @@
   };
   
 
-    function boucle($arg1){
+    function boucle($arg1, $arg2){
     	$content = 	'<div class="row">
                     <ul class="list-inline">
                       <li>
