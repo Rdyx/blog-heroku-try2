@@ -16,6 +16,7 @@
     $rowLog = pg_fetch_row($connect);
     $result = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
 	$row = pg_fetch_row($result);
+	var_dump($row[0]);
 
 		if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
 			$content = '<div class="row">
