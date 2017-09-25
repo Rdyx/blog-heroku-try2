@@ -115,8 +115,8 @@
       
       if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
         $content .= '<ul class="list-inline">
-                      <li><a href="web/pages/modify.php?id='.$row[0].'"><img alt="edit" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgg_qIWXYRQEceGlHvFqC2xe1K3IZkHlYLJbq5zfD8k0N9wpDBcA"></a></li>
-                      <li><a href="web/pages/delete.php?id='.$row[0].'"><img alt="delete" src="http://www.lejournaldesarts.fr/images/entete/outils/popup_connexion_croix.gif"></a></li>
+                      <li><a href="modify.php?id='.$row[0].'"><img alt="edit" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgg_qIWXYRQEceGlHvFqC2xe1K3IZkHlYLJbq5zfD8k0N9wpDBcA"></a></li>
+                      <li><a href="delete.php?id='.$row[0].'"><img alt="delete" src="http://www.lejournaldesarts.fr/images/entete/outils/popup_connexion_croix.gif"></a></li>
                     </ul>
                     </td></tr>';
       } else {
