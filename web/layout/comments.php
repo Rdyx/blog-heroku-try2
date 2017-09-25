@@ -1,7 +1,8 @@
 <?php
-  $comsResult = pg_query($dbconn, "SELECT art_com FROM articles ORDER BY com_oid DESC");
+  $comsResult = pg_query($dbconn, "SELECT art_com FROM articles");
   $content .= boucleCom($comsResult, $rowLog[0]);
   $id = htmlspecialchars($_GET['id']);
+  var_dump($id);
 
   function boucleCom($arg1, $arg2){
   	$content .= '<div class="row"><h3>Commentaires</h3>';

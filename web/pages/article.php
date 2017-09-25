@@ -16,7 +16,15 @@
     $rowLog = pg_fetch_row($connect);
     $id = htmlspecialchars($_GET['id']);
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
+
+    if(!isset($id)){
+      header("refresh:5; url=../../index.php");
+      $content = '<div class="row"><h1>Erreur !</h1><br>
+            <p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
+          <a href="../../index.php"><p>Retour à l\'accueil</p></a></div>';
+    } else {
     $content = boucle($selectId, $rowLog[0]);
+    };
 
       function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
@@ -48,7 +56,7 @@
     }
     return $content;
   }
-  
+
     include ('../layout/comments.php'); 
     include ('../layout/layout_nolist.php');
 
