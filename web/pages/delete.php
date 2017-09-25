@@ -14,7 +14,7 @@
 	$id = $_GET['id'];
 	$connect = pg_query($dbconn, "SELECT adm_name FROM admin");
 	$rowLog = pg_fetch_row($connect);
-	$result = pg_query($dbconn, "SELECT * FROM articles");
+	$result = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
 	$row = pg_fetch_row($result);
 
 	if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
