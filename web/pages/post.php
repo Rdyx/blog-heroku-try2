@@ -74,7 +74,7 @@
 			$content = '<div class="row"><h1>Erreur !</h1><br>
 			<p>Vous n\'avez pas les autorisations nécessaires !</p><br>
 			<ul class="list-inline">
-				<li><a href="login.php">Se connecter</a></li>
+				<li><a href="login.php">Se connecter en tant qu\'admin</a></li>
 				<li>-</li>
 				<li><a href="../../index.php">Retour à l\'acceuil</a></li>
 			</ul>

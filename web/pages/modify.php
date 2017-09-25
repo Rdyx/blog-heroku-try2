@@ -15,6 +15,7 @@
     $rowLog = pg_fetch_row($connect);
     $result = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
 	$row = pg_fetch_row($result);
+	$row[8];
 
 		if($_SESSION['nickname'] == $row[8]){
 			$content = '<div class="row">
@@ -73,6 +74,7 @@
 					</form>
 				</div>';
 		} else {
+			var_dump($row[8]);
 			$content = '<div class="row"><h1>Erreur !</h1><br>
 			<p>Vous n\'avez pas les autorisations nécessaires !</p><br>
 			<ul class="list-inline">
