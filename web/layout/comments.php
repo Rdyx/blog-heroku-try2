@@ -12,10 +12,10 @@
   include ('../layout/session.php');
   include ('../layout/navbar.php');
 
-  $result = pg_query($dbconn, "SELECT * FROM comments ORDER BY com_oid DESC");
+  $comsResult = pg_query($dbconn, "SELECT * FROM comments ORDER BY com_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $rowLog = pg_fetch_row($connect);
-  $content = boucle($result, $rowLog[0]);
+  $content .= boucle($comsResult, $rowLog[0]);
 
 
   $content .= '<div class="row"><h3>Commentaires</h3>';
