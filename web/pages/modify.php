@@ -23,7 +23,7 @@
 			<p>Pensez à bien remettre le thème ainsi que la date de parution !</p>
 				</div>
 				<div class="row">
-					<form action="modified.php" method="post">
+					<form action="modified.php?id="'.$row[0]."' method="post">
 						<div class="row">
 						<label for="titre">Titre</label>
 						</div>
