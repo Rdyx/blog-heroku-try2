@@ -19,7 +19,7 @@
 		pg_query($dbconn, "DELETE FROM articles WHERE art_oid = ".$artId);
 
 		header("refresh:5; url=../../index.php");
-		$content = '<div class="row"><h1>Article supprimé !</h1></br>
+		$content .= '<div class="row"><h1>Article supprimé !</h1></br>
 					<p>Votre article "<strong>'.$row[1].'</strong>" a bien été supprimé.</p></br>
 					<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
 					<a href="../../index.php"><p>Retour à l\'accueil</p></a></div>';
@@ -27,7 +27,7 @@
 		$content .= '<div class="row"><h1>Erreur !</h1><br>
 					<p>Une erreur est survenue !</p><br>
 					<a href="../../index.php"><p>Retour à l\'accueil</p></a></div>';
-	}
+	};
 
 	include ('../layout/layout_nolist.php');
 
