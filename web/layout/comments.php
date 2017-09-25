@@ -17,7 +17,7 @@
       //               </ul>
       //               </div>';
       // };
-
+  	}
       $content.= '<div class="col-xs-offset-2 col-xs-10 well text-right"><p><strong>Ecrire un commentaire</strong></p>
 			      <form action="postedComment.php" method="post">
 			      	<ul class="list-unstyled">
@@ -27,7 +27,7 @@
 			      </form>
 			  </div>
 			</div>';
-    }
+    
     return $content;
   }
 
