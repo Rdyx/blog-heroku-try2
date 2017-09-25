@@ -16,7 +16,7 @@
     $result = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."'");
 	$row = pg_fetch_row($result);
 
-		if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
+		if($_SESSION['nickname'] == $row[8]){
 			$content = '<div class="row">
 			<h1>Post an article</h1>
 				</div>
@@ -75,9 +75,7 @@
 		} else {
 			$content = '<div class="row"><h1>Erreur !</h1><br>
 			<p>Vous n\'avez pas les autorisations nécessaires !</p><br>
-			<ul class="list-inline">
-				<li><a href="login.php">Se connecter</a></li>
-				<li>-</li>
+			<ul class="list-inline">;
 				<li><a href="../../index.php">Retour à l\'acceuil</a></li>
 			</ul>
 			</div>';
