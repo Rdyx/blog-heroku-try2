@@ -12,11 +12,11 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-		$artTitle = ($_POST['titre']);
-		$artContent = ($_POST['contenu']);
-		$artGenre = ($_POST['genre']);
-		$artMois = ($_POST['mois']);
-		$artAnnee = ($_POST['annee']);
+		$artTitle = $_POST['titre'];
+		$artContent = $_POST['contenu'];
+		$artGenre = $_POST['genre'];
+		$artMois = $_POST['mois'];
+		$artAnnee = $_POST['annee'];
 		date_default_timezone_set('Europe/Paris');
 
 
