@@ -11,11 +11,11 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-	$test = pg_query($dbconn, 'SELECT * FROM admin');
+	$nick = htmlspecialchars($_POST['pseudo']);
+	$test = pg_query($dbconn, 'SELECT * FROM admin WHERE adm_name LIKE '.$nick);
 	$row = pg_fetch_row($test);
 	$pwd = strtoupper(hash('sha256', htmlspecialchars($_POST['pwd'])));
-	$nick = htmlspecialchars($_POST['pseudo']);
-
+	
 
 	if(($nick == $row[0] || $nick == $row[3]) && $pwd == $row[1]){
 		header("refresh:5; url=../../index.php");
