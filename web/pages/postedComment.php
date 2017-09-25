@@ -16,7 +16,7 @@
 		$id = htmlspecialchars($_GET['id']);
 
 		if(empty($comContent) || strlen($comContent) > 250){
-			$content = '<div class="row"><h1>Erreur !</h1><br> <a href="article.php?id="'.$id.'">Retour</a></div>';
+			$content = '<div class="row"><h1>Erreur !</h1><br> <a href="article.php?id='.$id.'">Retour</a></div>';
 		} else {
 			pg_query($dbconn, "INSERT INTO comments (com_content) VALUES ('".$comContent."')");
 			header("refresh:5; url=article.php?id=".$id);
