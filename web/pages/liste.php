@@ -101,15 +101,15 @@
       $content .= '<tr class="articlex col-xs-2"><td>'.$row[1].'</td>';
 
       if(strlen($row[3]) > 70){
-        $content .= '<td col-xs-4>'.substr($row[3], 0, 70).'...</td>';
+        $content .= '<td class="col-xs-4">'.substr($row[3], 0, 70).'...</td>';
       } else {
-        $content .= '<td col-xs-4>'.$row[3].'</td>';
+        $content .= '<td class="col-xs-4">'.$row[3].'</td>';
       };
 
-      $content .= '<td col-xs-1>'.$row[4].'</td>';
-      $content .= '<td col-xs-1>'.$row[5].'/'.$row[6].'</td>';
-      $content .= '<td col-xs-2>'.$row[7].'</td>';
-      $content .= '<td col-xs-2><a href="article.php?id='.$row[0].'">En savoir plus</a></td></tr>';
+      $content .= '<td class="col-xs-1">'.$row[4].'</td>';
+      $content .= '<td class="col-xs-1">'.$row[5].'/'.$row[6].'</td>';
+      $content .= '<td class="col-xs-2">'.$row[7].'</td>';
+      $content .= '<td class="col-xs-2"><a href="article.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
     $content .= '</tbody>
