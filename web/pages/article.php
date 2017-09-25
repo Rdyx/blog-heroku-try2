@@ -17,11 +17,11 @@
     $id = htmlspecialchars($_GET['id']);
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
     $content = boucle($selectId, $rowLog[0]);
-    // include ('web/layout/comments.php'); 
+    // include ('../layout/comments.php'); 
 
       function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row well well-lg article"><div class="row"><h1><strong> '.$row[1].' </strong></h1></div>';
+      $content .= '<div class="row well well-lg article"><div class="row"><h1><strong>'.$row[1].'</strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
