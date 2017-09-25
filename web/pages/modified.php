@@ -27,6 +27,10 @@
 								SET art_title = 'Topkeklol' 
 								WHERE art_oid = 52");
 
+			var_dump(pg_query($dbconn, "UPDATE articles
+								SET art_title = 'Topkeklol' 
+								WHERE art_oid = 52"));
+
 			header("refresh:5; url=../../index.php");
 			$content = '<div class="row"><h1>Success !</h1><br>
 						<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
