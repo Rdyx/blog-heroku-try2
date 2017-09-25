@@ -33,8 +33,8 @@
       if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
         $content .= '<div class="col-xs-12 text-right">
                     <ul class="list-inline">
-                      <li><a href="web/pages/modify.php?id='.$row[0].'">Modifier</a></li>
-                      <li><a href="web/pages/delete.php?id='.$row[0].'">Supprimer</a></li>
+                      <li><a href="modify.php?id='.$row[0].'">Modifier</a></li>
+                      <li><a href="delete.php?id='.$row[0].'">Supprimer</a></li>
                     </ul>
                     </div>';
       };
