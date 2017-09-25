@@ -25,11 +25,11 @@
 		} else {
 			pg_query($dbconn, "UPDATE articles
 								SET art_title = 'Topkeklol' 
-								WHERE art_oid = 52");
+								WHERE art_oid = ".$id);
 
 			var_dump(pg_query($dbconn, "UPDATE articles
-								SET art_title = 'Topkeklol' 
-								WHERE art_oid = 52"));
+								SET art_title = 'Topkeklolilol' 
+								WHERE art_oid = ".$id));
 
 			header("refresh:5; url=../../index.php");
 			$content = '<div class="row"><h1>Success !</h1><br>
