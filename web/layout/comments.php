@@ -1,7 +1,5 @@
 <?php
   $comsResult = pg_query($dbconn, "SELECT * FROM comments ORDER BY com_oid DESC");
-  $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
-  $rowLog = pg_fetch_row($connect);
   $content .= boucleCom($comsResult, $rowLog[0]);
 
 
