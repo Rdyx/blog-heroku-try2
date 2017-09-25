@@ -1,5 +1,5 @@
 <?php
-  $comsResult = pg_query($dbconn, "SELECT * FROM comments ORDER BY com_oid DESC");
+  $comsResult = pg_query($dbconn, "SELECT art_com FROM article ORDER BY com_oid DESC");
   $content .= boucleCom($comsResult, $rowLog[0]);
 
   function boucleCom($arg1, $arg2){
