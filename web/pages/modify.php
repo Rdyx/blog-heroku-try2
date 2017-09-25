@@ -19,6 +19,7 @@
 	var_dump($row[0]);
 
 		if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
+			var_dump($row[0]);
 			$content = '<div class="row">
 			<h1>Edit an article</h1><br>
 			<p>Pensez à bien remettre le thème ainsi que la date de parution !</p>
