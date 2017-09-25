@@ -7,16 +7,16 @@
   	while($row = pg_fetch_row($arg1)){
   		$content .= '<div class="col-xs-offset-2 col-xs-10 well well-lg article"><div class="row"><p>'.$row[1].'</p></div>';
 
-      if($_SESSION['nickname'] == $arg2){
-      	//Add com autor later
-      	//|| $_SESSION['nickname'] == $row[8]){
-        $content .= '<div class="col-xs-12 text-right">
-                    <ul class="list-inline">
-                      <li><a href="modify.php?id='.$row[0].'">Modifier</a></li>
-                      <li><a href="delete.php?id='.$row[0].'">Supprimer</a></li>
-                    </ul>
-                    </div>';
-      };
+      // if($_SESSION['nickname'] == $arg2){
+      // 	//Add com autor later
+      // 	//|| $_SESSION['nickname'] == $row[8]){
+      //   $content .= '<div class="col-xs-12 text-right">
+      //               <ul class="list-inline">
+      //                 <li><a href="modify.php?id='.$row[0].'">Modifier</a></li>
+      //                 <li><a href="delete.php?id='.$row[0].'">Supprimer</a></li>
+      //               </ul>
+      //               </div>';
+      // };
 
       $content.= '<div class="col-xs-offset-2 col-xs-10 well text-right"><p><strong>Ecrire un commentaire</strong></p>
 			      <form action="postedComment.php" method="post">
