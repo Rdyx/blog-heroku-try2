@@ -19,9 +19,9 @@
       };
   	}
       $content.= '<div class="col-xs-offset-2 col-xs-10 well text-right"><p><strong>Ecrire un commentaire</strong></p>
-			      <form action="postedComment.php" method="post">
+			      <form action="postedComment.php?id="'.$id.'" method="post">
 			      	<ul class="list-unstyled">
-			      		<li><textarea name="commentContent" id="contenu" cols="50" rows="3" placeholder="Votre texte..." maxlength="1000" required></textarea></li>
+			      		<li><textarea name="commentContent" id="contenu" cols="65" rows="3" placeholder="Votre texte..." maxlength="250" required></textarea></li>
 			      		<li><input type="submit" value="Poster"></li>
 			      	</ul>
 			      </form>
