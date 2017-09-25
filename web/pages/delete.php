@@ -14,8 +14,8 @@
 	$id = $_GET['id'];
 	$connect = pg_query($dbconn, "SELECT adm_name FROM admin");
 	$rowLog = pg_fetch_row($connect);
-	
-	if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
+
+	if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
 		pg_query($dbconn, "DELETE FROM articles WHERE art_oid = '".$id."'");
 
 		header("refresh:5; url=../../index.php");
