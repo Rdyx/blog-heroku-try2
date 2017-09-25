@@ -75,7 +75,7 @@
 		} else {
 			$content = '<div class="row"><h1>Erreur !</h1><br>
 			<p>Vous n\'avez pas les autorisations nécessaires !</p><br>
-			<ul class="list-inline">;
+			<ul class="list-inline">
 				<li><a href="../../index.php">Retour à l\'acceuil</a></li>
 			</ul>
 			</div>';
