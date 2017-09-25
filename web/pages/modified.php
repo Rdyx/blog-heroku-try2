@@ -23,7 +23,7 @@
 		if(empty($artTitle) || empty($artContent) || strlen($artTitle) > 50 || strlen($artContent) > 1000 || $artMois <= 0 || $artMois > 12 || empty($artMois) || $artAnnee <= -10001 || $artAnnee > date('Y') || empty($artAnnee)){
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="post.php">Retour</a></div>';
 		} else {
-			pg_query($dbconn, "UPDATE articles SET (art_title, art_content, art_genre, art_month, art_year) = ('".$artTitle."', '".$artContent."', '".$artGenre."', '".$artMois."', '".$artAnnee."') WHERE art_oid = '".$id."'");
+			pg_query($dbconn, "UPDATE articles SET art_title = '".$artTitle."', art_content = '".$artContent."', art_genre = '".$artGenre."', art_month = '".$artMois."', art_year = '".$artAnnee."' WHERE art_oid = '".$id."'");
 			header("refresh:5; url=../../index.php");
 			$content = '<div class="row"><h1>Success !</h1><br>
 						<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à la page d\'accueil.</p></br>
