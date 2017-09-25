@@ -89,11 +89,11 @@
       <ul class="pagination"></ul>
     				<table class="row table-striped table-bordered table-responsive">
     					<tr>
-    						<th class="text-center col-xs-3">Titre</th>
-    						<th class="text-center col-xs-5">Résumé</th>
-    						<th class="text-center col-xs-1">Thème</th>
-    						<th class="text-center col-xs-1">Date de parution</th>
-    						<th class="text-center col-xs-2">Date de l\'article</th>
+    						<th class="text-center">Titre</th>
+    						<th class="text-center">Résumé</th>
+    						<th class="text-center">Thème</th>
+    						<th class="text-center">Date de parution</th>
+    						<th class="text-center">Date de l\'article</th>
     					</tr>
     					<tbody class="list">';
 
@@ -101,15 +101,15 @@
       $content .= '<tr class="articlex"><td>'.$row[1].'</td>';
 
       if(strlen($row[3]) > 70){
-        $content .= '<td>'.substr($row[3], 0, 70).'...</td>';
+        $content .= '<td col-xs-2>'.substr($row[3], 0, 70).'...</td>';
       } else {
-        $content .= '<td>'.$row[3].'</td>';
+        $content .= '<td col-xs-4>'.$row[3].'</td>';
       };
 
-      $content .= '<td>'.$row[4].'</td>';
-      $content .= '<td>'.$row[5].'/'.$row[6].'</td>';
-      $content .= '<td>'.$row[7].'</td>';
-      $content .= '<td><a href="article.php?id='.$row[0].'">En savoir plus</a></td></tr>';
+      $content .= '<td col-xs-1>'.$row[4].'</td>';
+      $content .= '<td col-xs-1>'.$row[5].'/'.$row[6].'</td>';
+      $content .= '<td col-xs-2>'.$row[7].'</td>';
+      $content .= '<td col-xs-2><a href="article.php?id='.$row[0].'">En savoir plus</a></td></tr>';
     }
 
     $content .= '</tbody>
