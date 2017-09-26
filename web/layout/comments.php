@@ -14,7 +14,7 @@
   	while($row = pg_fetch_row($arg1)){
   		$content .= '<div class="col-xs-offset-1 col-xs-10 well well-lg comment">';
 
-    if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
+    if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[3]){
         $content .= '<div class="text-right">
                     <ul class="list-inline">
                       <li><a href="modifyCom.php?id='.$arg3.'&postId='.$row[0].'"><img alt="edit" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgg_qIWXYRQEceGlHvFqC2xe1K3IZkHlYLJbq5zfD8k0N9wpDBcA"></a></li>
@@ -25,7 +25,8 @@
 
       };
 
-  		$content .= '<div class="row"><p>'.$row[1].'</p></div></div>';
+  		$content .= '<div class="row text-left"><p>Posté par <strong>'.$row[3].'</strong> le <strong>'.$row[4].'</strong></p></div>
+  			<div class="row well well-sm"><p>'.$row[1].'</p></div></div>';
 
   	}
       $content.= '</div>

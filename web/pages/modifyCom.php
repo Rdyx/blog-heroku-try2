@@ -18,7 +18,7 @@
     $result = pg_query($dbconn, "SELECT * FROM comments WHERE com_oid = '".$postId."'");
 	$row = pg_fetch_row($result);
 
-		if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
+		if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[3]){
 			$content.= '</div>
       			<div class="col-xs-offset-1 col-xs-10 text-right"><p><strong>Ecrire un commentaire</strong></p>
 			      <form action="modifiedCom.php?id='.$id.'&postId='.$postId.'" method="post">

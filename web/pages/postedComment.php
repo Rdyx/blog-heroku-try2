@@ -18,7 +18,7 @@
 		if(empty($comContent) || strlen($comContent) > 250){
 			$content = '<div class="row"><h1>Erreur !</h1><br> <a href="article.php?id='.$id.'">Retour</a></div>';
 		} else {
-			pg_query($dbconn, "INSERT INTO comments (com_content, com_art_oid) VALUES ('".$comContent."', '".$id."')");
+			pg_query($dbconn, "INSERT INTO comments (com_content, com_art_oid, com_autor, com_date) VALUES ('".$comContent."', '".$id."', '".$_SESSION['nickname']."', '".date('d-m-Y à H:i')."')");
 			header("refresh:5; url=article.php?id=".$id);
 			$content = '<div class="row"><h1>Success !</h1><br>
 						<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à l\'article.</p></br>

@@ -17,7 +17,7 @@
 		$postId = htmlspecialchars($_GET['postId']);
 
 		if(empty($comContent) || strlen($comContent) > 250){
-			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="article.php?id="'.$id.'>Retour</a></div>';
+			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="article.php?id='.$id.'">Retour</a></div>';
 		} else {
 		pg_query($dbconn, "UPDATE comments SET (com_content) = ('".$comContent."') WHERE com_oid = ".$postId);
 			header("refresh:5; url=article.php?id=".$id);
