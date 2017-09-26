@@ -14,7 +14,7 @@
 
     $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
     $rowLog = pg_fetch_row($connect);
-    $id = htmlspecialchars($_GET['id']);
+    $id = htmlspecialchars($_GET['id'], ENT_QUOTES);
     $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = $id");
 
     if(!isset($id)){

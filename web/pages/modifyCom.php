@@ -11,8 +11,8 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 	
-	$id = htmlspecialchars($_GET['id']);
-	$postId = htmlspecialchars($_GET['postId']);
+	$id = htmlspecialchars($_GET['id'], ENT_QUOTES);
+	$postId = htmlspecialchars($_GET['postId'], ENT_QUOTES);
 	$connect = pg_query($dbconn, "SELECT adm_name FROM admin");
     $rowLog = pg_fetch_row($connect);
     $result = pg_query($dbconn, "SELECT * FROM comments WHERE com_oid = '".$postId."'");

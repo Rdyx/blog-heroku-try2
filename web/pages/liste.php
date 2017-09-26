@@ -12,8 +12,8 @@
   include('../layout/session.php');
   include ('../layout/navbar_list.php');
 
-  $colSelect = htmlspecialchars($_POST['colSelect']);
-  $orderSelect = htmlspecialchars($_POST['orderSelect']);
+  $colSelect = htmlspecialchars($_POST['colSelect'], ENT_QUOTES);
+  $orderSelect = htmlspecialchars($_POST['orderSelect'], ENT_QUOTES);
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $rowLog = pg_fetch_row($connect);
   $order = "ORDER BY art_oid DESC";
@@ -42,7 +42,7 @@
 
   $result = pg_query($dbconn, "SELECT * FROM articles ".$order);
   $content = boucle($result, $rowLog[0]);
-  $searchInput = htmlspecialchars($_POST['search']);
+  $searchInput = htmlspecialchars($_POST['search'], ENT_QUOTES);
 
   if(!empty($searchInput)){
     $result = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);

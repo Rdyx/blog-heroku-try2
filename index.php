@@ -19,7 +19,7 @@
   $content = boucle($result, $rowLog[0], $i);
 
 
-  $searchInput = htmlspecialchars($_POST['search']);
+  $searchInput = htmlspecialchars($_POST['search'], ENT_QUOTES);
 
   if(!empty($searchInput)){
     $search = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
@@ -31,7 +31,7 @@
   };
 
 
-  $genre = htmlspecialchars($_GET['genre']);
+  $genre = htmlspecialchars($_GET['genre'], ENT_QUOTES);
 
   if(!empty($genre)){
     $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."' ".$order);

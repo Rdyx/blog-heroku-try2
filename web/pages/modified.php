@@ -12,12 +12,12 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-		$artTitle = $_POST['titre'];
-		$artContent = $_POST['contenu'];
-		$artGenre = $_POST['genre'];
-		$artMois = $_POST['mois'];
-		$artAnnee = $_POST['annee'];
-		$id = htmlspecialchars($_GET['id']);
+		$artTitle = htmlspecialchars($_POST['titre'], ENT_QUOTES);
+		$artContent = htmlspecialchars($_POST['contenu'], ENT_QUOTES);
+		$artGenre = htmlspecialchars($_POST['genre'], ENT_QUOTES);
+		$artMois = htmlspecialchars($_POST['mois'], ENT_QUOTES);
+		$artAnnee = htmlspecialchars($_POST['annee'], ENT_QUOTES);
+		$id = htmlspecialchars($_GET['id'], ENT_QUOTES);
 
 
 		if(empty($artTitle) || empty($artContent) || strlen($artTitle) > 50 || strlen($artContent) > 1000 || $artMois <= 0 || $artMois > 12 || empty($artMois) || $artAnnee <= -10001 || $artAnnee > date('Y') || empty($artAnnee)){

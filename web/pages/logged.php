@@ -11,7 +11,7 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-	$nick = htmlspecialchars($_POST['pseudo']);
+	$nick = htmlspecialchars($_POST['pseudo'], ENT_QUOTES);
 	$test = pg_query($dbconn, "SELECT * FROM admin WHERE adm_name LIKE '".$nick."' OR adm_mail LIKE '".$nick."'");
 	$row = pg_fetch_row($test);
 	$pwd = strtoupper(hash('sha256', htmlspecialchars($_POST['pwd'])));

@@ -12,9 +12,9 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-		$comContent = $_POST['commentContent'];
-		$id = htmlspecialchars($_GET['id']);
-		$postId = htmlspecialchars($_GET['postId']);
+		$comContent = htmlspecialchars($_POST['commentContent'], ENT_QUOTES);
+		$id = htmlspecialchars($_GET['id'], ENT_QUOTES);
+		$postId = htmlspecialchars($_GET['postId'], ENT_QUOTES);
 
 		if(empty($comContent) || strlen($comContent) > 250){
 			$content = '<div class="row"><h1>Erreur !</h1> <br> <a href="article.php?id='.$id.'">Retour</a></div>';
