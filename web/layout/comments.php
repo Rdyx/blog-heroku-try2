@@ -1,5 +1,5 @@
 <?php
-  $comsResult = pg_query($dbconn, "SELECT art_com FROM articles");
+  $comsResult = pg_query($dbconn, "SELECT * FROM comments WHERE art_com = com_oid FROM comments");
 
     $content .= '<div class="row well" id="listComs"><h3>Commentaires</h3>
   <div class="col-xs-12">
