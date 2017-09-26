@@ -1,5 +1,5 @@
 <?php
-  $comsResult = pg_query($dbconn, "SELECT * FROM comments WHERE com_art_oid = '".$id."'");
+  $comsResult = pg_query($dbconn, "SELECT * FROM comments WHERE com_art_oid = '".$id."' ORDER BY com_oid DESC");
 
     $content .= '<div class="row well" id="listComs"><h3>Commentaires</h3>
 				  <div class="col-xs-12">
@@ -12,18 +12,21 @@
 
   function boucleCom($arg1, $arg2, $arg3){
   	while($row = pg_fetch_row($arg1)){
-  		$content .= '<div class="col-xs-offset-1 col-xs-10 well well-lg comment"><p>'.$row[1].'</p></div>';
+  		$content .= '<div class="col-xs-offset-1 col-xs-10 well well-lg comment">';
 
-      if($_SESSION['nickname'] == $arg2){
-      	//Add com autor later
-      	//|| $_SESSION['nickname'] == $row[8]){	
-        $content .= '<div class="col-xs-12 text-justify">
+    if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
+        $content .= '<div class="text-right">
                     <ul class="list-inline">
-                      <li><a href="modifyCom.php?id='.$arg3.'&postId='.$row[0].'">Modifier</a></li>
-                      <li><a href="deleteCom.php?id='.$arg3.'&postId='.$row[0].'">Supprimer</a></li>
+                      <li><a href="modifyCom.php?id='.$arg3.'&postId='.$row[0].'"><img alt="edit" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgg_qIWXYRQEceGlHvFqC2xe1K3IZkHlYLJbq5zfD8k0N9wpDBcA"></a></li>
+                      <li><a href="deleteCom.php?id='.$arg3.'&postId='.$row[0].'"><img alt="delete" src="http://www.lejournaldesarts.fr/images/entete/outils/popup_connexion_croix.gif"></a></li>
                     </ul>
                     </div>';
+
+
       };
+
+  		$content .= '<div class="row"><p>'.$row[1].'</p></div></div>';
+
   	}
       $content.= '</div>
       			<div class="col-xs-offset-1 col-xs-10 text-right"><p><strong>Ecrire un commentaire</strong></p>

@@ -11,8 +11,8 @@
 	include('../layout/session.php');
 	include ('../layout/navbar.php');
 
-	$id = $_GET['id'];
-	$postId = $_GET['postId'];
+	$id = htmlspecialchars($_GET['id']);
+	$postId = htmlspecialchars($_GET['postId']);
 	$connect = pg_query($dbconn, "SELECT adm_name FROM admin");
 	$rowLog = pg_fetch_row($connect);
 	$result = pg_query($dbconn, "SELECT * FROM comments WHERE com_oid = '".$postId."'");
@@ -22,7 +22,8 @@
 		pg_query($dbconn, "DELETE FROM comments WHERE com_oid = '".$row[0]."'");
 
 		header("refresh:5; url=article.php?id=".$id);
-			$content = '<p>Votre commentaire "<strong>'.$row[1].'</strong>" a bien été supprimé.</p></br>
+			$content = '<h1>Succès !</h1><br>
+						<p>Votre commentaire "<strong>'.$row[1].'</strong>" a bien été supprimé.</p></br>
 						<p>Patientez 5 secondes ou cliquez sur le lien ci-dessous pour revenir à l\'article.</p></br>
 					<a href="article.php?id='.$id.'"><p>Retour à l\'article</p></a></div>';
 	} else {
