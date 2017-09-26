@@ -1,5 +1,7 @@
 <?php
-  $comsResult = pg_query($dbconn, "SELECT com_content FROM comments WHERE com_oid = articles.art_com");
+  // $comsResult = pg_query($dbconn, "SELECT com_content FROM comments WHERE 'articles.art_com' LIKE 'comments.com_oid'");
+	
+	  $comsResult = pg_query($dbconn, "SELECT com_content FROM comments WHERE com_art_oid = '".$id."'");
 
     $content .= '<div class="row well" id="listComs"><h3>Commentaires</h3>
   <div class="col-xs-12">
@@ -14,16 +16,16 @@
   	while($row = pg_fetch_row($arg1)){
   		$content .= '<div class="col-xs-offset-1 col-xs-10 well well-lg comment"><p>'.$row[0].'</p></div>';
 
-      // if($_SESSION['nickname'] == $arg2){
-      // 	//Add com autor later
-      // 	//|| $_SESSION['nickname'] == $row[8]){
-      //   $content .= '<div class="col-xs-12 text-justify">
-      //               <ul class="list-inline">
-      //                 <li><a href="modify.php?id='.$row[0].'">Modifier</a></li>
-      //                 <li><a href="delete.php?id='.$row[0].'">Supprimer</a></li>
-      //               </ul>
-      //               </div>';
-      // };
+      if($_SESSION['nickname'] == $arg2){
+      	//Add com autor later
+      	//|| $_SESSION['nickname'] == $row[8]){
+        $content .= '<div class="col-xs-12 text-justify">
+                    <ul class="list-inline">
+                      <li><a href="modifyCom.php?id='.$row[0].'">Modifier</a></li>
+                      <li><a href="deleteCom.php?id='.$row[0].'">Supprimer</a></li>
+                    </ul>
+                    </div>';
+      };
   	}
       $content.= '</div>
       			<div class="col-xs-offset-1 col-xs-10 text-right"><p><strong>Ecrire un commentaire</strong></p>

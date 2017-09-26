@@ -15,7 +15,7 @@
     $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
     $rowLog = pg_fetch_row($connect);
     $id = htmlspecialchars($_GET['id']);
-    $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = '".$id."' ".$order);
+    $selectId = pg_query($dbconn, "SELECT * FROM articles WHERE art_oid = $id");
 
     if(!isset($id)){
       header("refresh:5; url=../../index.php");
