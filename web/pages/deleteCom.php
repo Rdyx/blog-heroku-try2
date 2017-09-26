@@ -18,7 +18,7 @@
 	$result = pg_query($dbconn, "SELECT * FROM comments WHERE com_oid = '".$postId."'");
 	$row = pg_fetch_row($result);
 
-	if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[8]){
+	if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[3]){
 		pg_query($dbconn, "DELETE FROM comments WHERE com_oid = '".$row[0]."'");
 
 		header("refresh:5; url=article.php?id=".$id);
