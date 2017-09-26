@@ -28,8 +28,8 @@
 
       function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row well well-lg article"><div class="row"><h1><strong>'.$row[1].'</strong></h1></div>';
-      $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
+      $content .= '<div class="row well well-lg article"><div class="row"><h1><strong id="titre">'.$row[1].'</strong></h1></div>';
+      $content .= '<div class="row text-justify well"><p id="content">'.$row[3].'<p></div>';
       $content .= '<div class="row text-center">';
 
       if($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[8]){
@@ -48,6 +48,8 @@
                     <li>Thème : <a href="?genre='.$row[4].'"><strong>'.$row[4].'</strong></a></li>
                     <li> - </li>
                     <li><a href="#" alt="Back-To-The-Top !"><img alt="^" src="http://www.dema-france.com/global/img/puces/fleche-haut.png"></a></li>
+                    <li> - </li>
+                    <li><a href="" class="download"><button>Sauvegarder l\'article</button></a></li>
                   </ul>
                 </div>
                 </div>';
@@ -65,6 +67,8 @@
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.js"></script>
+<script src="../js/download.js"></script>
 <script src="../js/list_com.js"></script>
   </body>
   </html>

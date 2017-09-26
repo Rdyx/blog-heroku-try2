@@ -16,14 +16,14 @@
   $result = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $rowLog = pg_fetch_row($connect);
-  $content = boucle($result, $rowLog[0]);
+  $content = boucle($result, $rowLog[0], $i);
 
 
   $searchInput = htmlspecialchars($_POST['search']);
 
   if(!empty($searchInput)){
     $search = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
-    $content = boucle($search, $rowLog[0]);
+    $content = boucle($search, $rowLog[0], $i);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
       $content .= '<div class="row"><p>Il n\'existe aucun article contenant "<strong>'.$searchInput.'</strong>" !</p></div>';
@@ -35,12 +35,12 @@
 
   if(!empty($genre)){
     $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."' ".$order);
-    $content = boucle($selectTheme, $rowLog[0]);  
+    $content = boucle($selectTheme, $rowLog[0], $i);  
   };
 
   function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row well well-lg article"><div class="row"><h1><strong>'.$row[1].'</strong></h1></div>';
+      $content .= '<div class="row well well-lg article"><div class="row" class="titre"><h1><strong>'.$row[1].'</strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
@@ -78,6 +78,7 @@ include ('web/layout/layout.php');
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.js"></script>
 <script src="web/js/app.js"></script>
 </body>
 </html>
