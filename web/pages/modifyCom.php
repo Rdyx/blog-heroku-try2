@@ -19,7 +19,7 @@
 	$row = pg_fetch_row($result);
 
 		if($_SESSION['nickname'] == $rowLog[0] || $_SESSION['nickname'] == $row[3]){
-			$content.= '</div>
+			$content = '</div>
       			<div class="col-xs-offset-1 col-xs-10 text-right"><p><strong>Ecrire un commentaire</strong></p>
 			      <form action="modifiedCom.php?id='.$id.'&postId='.$postId.'" method="post">
 			      	<ul class="list-unstyled">
@@ -37,13 +37,6 @@
 			</ul>
 			</div>';
 		};
-
-		function boucle($arg1, $arg2){
-		    for($i = $arg1; $i > $arg2; $i--){
-		      $content .= '<option>'.$i.'</option>';
-		    }
-		    return $content;
-		  }
 
 		include ('../layout/layout_nolist.php');
 		?>

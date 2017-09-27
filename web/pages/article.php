@@ -28,7 +28,7 @@
 
       function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row well well-lg article"><div class="row"><h1><strong id="titre">'.$row[1].'</strong></h1></div>';
+      $content = '<div class="row well well-lg article"><div class="row"><h1><strong id="titre">'.$row[1].'</strong></h1></div>';
       $content .= '<div class="row text-justify well"><p id="content">'.$row[3].'<p></div>';
       $content .= '<div class="row text-center">';
 

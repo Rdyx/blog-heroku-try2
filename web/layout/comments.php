@@ -12,7 +12,7 @@
 
   function boucleCom($arg1, $arg2, $arg3){
   	while($row = pg_fetch_row($arg1)){
-  		$content .= '<div class="col-xs-offset-1 col-xs-10 well well-lg comment">';
+  		$content = '<div class="col-xs-offset-1 col-xs-10 well well-lg comment">';
 
      if($_SESSION['nickname'] == 'Invité'){
       } elseif($_SESSION['nickname'] == $arg2 || $_SESSION['nickname'] == $row[3]){

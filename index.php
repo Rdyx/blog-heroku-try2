@@ -16,14 +16,14 @@
   $result = pg_query($dbconn, "SELECT * FROM articles ORDER BY art_oid DESC");
   $connect = pg_query($dbconn, "SELECT adm_name FROM admin");
   $rowLog = pg_fetch_row($connect);
-  $content = boucle($result, $rowLog[0], $i);
+  $content = boucle($result, $rowLog[0]);
 
 
   $searchInput = htmlspecialchars($_POST['search'], ENT_QUOTES);
 
   if(!empty($searchInput)){
     $search = pg_query($dbconn, "SELECT * FROM articles WHERE LOWER(art_title) LIKE '%".strtolower($searchInput)."%' ".$order);
-    $content = boucle($search, $rowLog[0], $i);
+    $content = boucle($search, $rowLog[0]);
     if(empty($content)){
       $content = '<div class="row"><h1>Désolé !</h1><div>';
       $content .= '<div class="row"><p>Il n\'existe aucun article contenant "<strong>'.$searchInput.'</strong>" !</p></div>';
@@ -35,12 +35,12 @@
 
   if(!empty($genre)){
     $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."' ".$order);
-    $content = boucle($selectTheme, $rowLog[0], $i);  
+    $content = boucle($selectTheme, $rowLog[0]);  
   };
 
   function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
-      $content .= '<div class="row well well-lg article"><div class="row" class="titre"><h1><strong>'.$row[1].'</strong></h1></div>';
+      $content = '<div class="row well well-lg article"><div class="row" class="titre"><h1><strong>'.$row[1].'</strong></h1></div>';
       $content .= '<div class="row text-justify well"><p> '.$row[3].' <p></div>';
       $content .= '<div class="row text-center">';
 
