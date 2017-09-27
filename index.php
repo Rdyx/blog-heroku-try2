@@ -37,7 +37,7 @@
     $selectTheme = pg_query($dbconn, "SELECT * FROM articles WHERE art_genre LIKE '".$genre."' ".$order);
     $content = boucle($selectTheme, $rowLog[0]);  
   };
-
+  
   function boucle($arg1, $arg2){
     while($row = pg_fetch_row($arg1)){
       $content .= '<div class="row well well-lg article"><div class="row" class="titre"><h1><strong>'.$row[1].'</strong></h1></div>';
